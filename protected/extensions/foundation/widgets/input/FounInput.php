@@ -142,9 +142,30 @@ abstract class FounInput extends CInputWidget {
      */
     protected function radioButton()
     {
-        echo '<label for="'.CHtml::getIdByName(CHtml::resolveName($this->model, $this->attribute)).'">';
+    	if(isset($this->htmlOptions["labelOptions"])){
+    		$labelOptions = $this->htmlOptions["labelOptions"];
+			unset($this->htmlOptions["labelOptions"]);
+    	}else{
+    		$labelOptions = array();
+    	}
+		
+		$label = null;
+		if(isset($labelOptions["label"])){
+			$label = $labelOptions["label"];
+			unset($labelOptions["label"]);
+		}
+		if(!isset($labelOptions["for"])){
+	    	$labelOptions["for"] = CHtml::getIdByName(CHtml::resolveName($this->model, $this->attribute));
+		}
+		echo CHtml::openTag("label", $labelOptions);
         echo $this->form->radioButton($this->model, $this->attribute, $this->htmlOptions).PHP_EOL;
-        echo $this->model->getAttributeLabel($this->attribute);
+		if($label !== null){
+			if($label !== false){
+				echo $label;
+			}
+		}else{
+	        echo $this->model->getAttributeLabel($this->attribute);
+		}
         echo $this->getError().$this->getHint();
         echo '</label>';
     }

@@ -217,7 +217,8 @@ class FounActiveForm extends CActiveForm {
 			$htmlOptions['value'] = $value;
 			$htmlOptions['id'] = $baseID . '_' . $id++;
 			$option = CHtml::$method($name, $checked, $htmlOptions);
-			$items[] = strtr($template, array('{input}' => $option, '{for}' => $htmlOptions['id'],'{label}' => $label ));
+			$labelOptions["for"] = $htmlOptions['id'];
+			$items[] = CHtml::tag("label", $labelOptions, $option.$label);
 		}
 		return $hidden . implode('', $items);
 	}
