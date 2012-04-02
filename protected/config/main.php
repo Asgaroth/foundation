@@ -10,7 +10,7 @@ return array(
 	'name'=>'My Web Application',
 
 	// preloading 'log' component
-	'preload'=>array('log'),
+	'preload'=>array('log', 'foundation'),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -32,6 +32,7 @@ return array(
 
 	// application components
 	'components'=>array(
+	   'foundation' => array("class" => "ext.foundation.components.Foundation"),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
@@ -60,10 +61,6 @@ return array(
 			'charset' => 'utf8',
 		),
 		*/
-		'errorHandler'=>array(
-			// use 'site/error' action to display errors
-            'errorAction'=>'site/error',
-        ),
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
