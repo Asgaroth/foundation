@@ -42,17 +42,6 @@ abstract class FounBaseMenu extends FounWidget
 		if (!isset($item['linkOptions']))
 			$item['linkOptions'] = array();
 
-		if (isset($item['icon']))
-		{
-			if (strpos($item['icon'], 'icon') === false)
-			{
-				$pieces = explode(' ', $item['icon']);
-                $item['icon'] = 'icon-'.implode(' icon-', $pieces);
-			}
-
-			$item['label'] = '<i class="'.$item['icon'].'"></i> '.$item['label'];
-		}
-
 		if (!isset($item['header']) && !isset($item['url']))
 			$item['url'] = '#';
 

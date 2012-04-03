@@ -16,12 +16,12 @@ class FounAlert extends FounWidget{
 	/**
 	 * @var array the keys for which to get flash messages.
 	 */
-	public $keys = array('success', 'info', 'warning', 'error');
+	public $keys = array('info', 'success', 'warning', 'error');
 	
 	/**
 	 * @var string the template to use for displaying flash messages.
 	 */
-	public $template = '<div class="alert-box {key}">{message}<a class="close">&times;</a></div>';
+	public $template = '<div class="alert-box {key}">{message}<a class="close" href="">&times;</a></div>';
 	
 	/**
 	 * Initializes the widget.
