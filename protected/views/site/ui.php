@@ -98,106 +98,57 @@ Yeah, we got that.</h4>
 </p>
 <h5>Simple Tabs</h5>
 <?php
-                    if (!empty($this -> menu)) :
-                        $this -> widget("foundation.widgets.menu.FounTabs", array('items' => $this -> menu));
-                    endif;
-                    ?>
-<dl class="tabs">
-	<dd>
-		<a href="#simple1" class="active">Simple Tab 1</a>
-	</dd>
-	<dd>
-		<a href="#simple2">Simple Tab 2</a>
-	</dd>
-	<dd class="hide-on-phones">
-		<a href="#simple3">Simple Tab 3</a>
-	</dd>
-</dl>
-<ul class="tabs-content">
-	<li class="active" id="simple1Tab">
-		This is simple tab 1's content. Pretty neat, huh?
-	</li>
-	<li id="simple2Tab">
-		This is simple tab 2's content. Now you see it!
-	</li>
-	<li id="simple3Tab">
-		This is simple tab 3's content. It's only okay.
-	</li>
-</ul>
-<script src="http://snipt.net/embed/beabf0c3da0338ec44d9d383d9c405f4"></script>
+    $this -> widget("foundation.widgets.FounTabs", array('items' => array(
+            array('label' => 'Simple Tab 1', 'content' => "This is simple tab 1's content. Pretty neat, huh? "),
+            array('label' => 'Simple Tab 2', 'content' => "This is simple tab 2's content. Now you see it! "),
+            array('label' => 'Simple Tab 3', 'content' => "This is simple tab 3's content. It's only okay. "),
+    )));
+?>
+<script type="text/javascript" src="http://snipt.net/embed/8584f6a5cc2ad250dbeaefdd5bcac8c1"></script>
 <hr />
 <h5>Contained Tabs</h5>
 <p>
 	Contained tabs have a simple added class of 'contained' on the tabs-content element. What that means is the tab content has a border around it tying it to the tabs, and the padding on that container (by default) is one column on each side. That means you can still use standard column sizes inside a tab element.
 </p>
-<dl class="tabs contained">
-	<dd>
-		<a href="#simpleContained1" class="active">Simple Tab 1</a>
-	</dd>
-	<dd>
-		<a href="#simpleContained2">Simple Tab 2</a>
-	</dd>
-	<dd class="hide-on-phones">
-		<a href="#simpleContained3">Simple Tab 3</a>
-	</dd>
-</dl>
-<ul class="tabs-content contained">
-	<li class="active" id="simpleContained1Tab">
-		This is simple tab 1's content. Pretty neat, huh?
-	</li>
-	<li id="simpleContained2Tab">
-		This is simple tab 2's content. Now you see it!
-	</li>
-	<li id="simpleContained3Tab">
-		This is simple tab 3's content. It's only okay.
-	</li>
-</ul>
-<script src="http://snipt.net/embed/79e2cd3515daf12475946930a3d0f011"></script>
+<?php
+    $this -> widget("foundation.widgets.FounTabs", array('type' => 'contained', 'items' => array(
+            array('label' => 'Simple Tab 1', 'content' => "This is simple tab 1's content. Pretty neat, huh? "),
+            array('label' => 'Simple Tab 2', 'content' => "This is simple tab 2's content. Now you see it! "),
+            array('label' => 'Simple Tab 3', 'content' => "This is simple tab 3's content. It's only okay. "),
+    )));
+?>
+<script type="text/javascript" src="http://snipt.net/embed/75fa2eb509f92fdb16947679f2a3896e"></script>
 <hr />
 <h5>Nice Tabs</h5>
 <p>
 	Need something a little fancier? Nice tabs have some sweet default styling and can add a little polish to a prototype (or documentation). They can be both standard and contained, just like the simple tabs.
 </p>
-<dl class="nice contained tabs">
-	<dd>
-		<a href="#nice1" class="active">Nice Tab 1</a>
-	</dd>
-	<dd>
-		<a href="#nice2">Nice Tab 2</a>
-	</dd>
-	<dd class="hide-on-phones">
-		<a href="#nice3">Nice Tab 3</a>
-	</dd>
-</dl>
-<ul class="nice tabs-content contained">
-	<li class="active" id="nice1Tab">
-		This is nice tab 1's content. Pretty neat, huh?
-	</li>
-	<li id="nice2Tab">
-		This is nice tab 2's content. Now you see it!
-	</li>
-	<li id="nice3Tab">
-		This is simple tab 3's content. It's only okay.
-	</li>
-</ul>
-<script src="http://snipt.net/embed/63e549cb8b9606acbaed87b1b37b51e1"></script>
+<?php
+    $this -> widget("foundation.widgets.FounTabs", array('type' => 'nice contained', 'items' => array(
+            array('label' => 'Nice Tab 1', 'content' => "This is simple tab 1's content. Pretty neat, huh? "),
+            array('label' => 'Nice Tab 2', 'content' => "This is simple tab 2's content. Now you see it! "),
+            array('label' => 'Nice Tab 3', 'content' => "This is simple tab 3's content. It's only okay. "),
+    )));
+?>
+<script type="text/javascript" src="http://snipt.net/embed/a7377ec6c652b3b574cdf479824bc1c6"></script>
 <hr />
 <h5>Vertical Tabs</h5>
 <p>
 	You can also use tabs in a vertical configuration by adding a class of 'vertical' to the DL element. These are great for more scalable nav, and you can see how they work on this page on a tablet or desktop.
 </p>
-<dl class="nice vertical tabs">
-	<dd>
-		<a href="#vertical1" class="active">Vertical Tab 1</a>
-	</dd>
-	<dd>
-		<a href="#vertical2">Vertical Tab 2</a>
-	</dd>
-	<dd>
-		<a href="#vertical3">Vertical Tab 3</a>
-	</dd>
-</dl>
-<script type="text/javascript" src="http://snipt.net/embed/4086cc6652ec6713851eba85db00c3e5"></script>
+<?php
+    $this -> widget("foundation.widgets.FounTabs", array('type' => 'nice vertical', 'items' => array(
+            array('label' => 'Vertical Tab 1', 'linkOptions' => array("class"=>"active")),
+            array('label' => 'Vertical Tab 2'),
+            array('label' => 'Vertical Tab 3'),
+    )));
+?>
+<script type="text/javascript" src="http://snipt.net/embed/0dc04fc8cdcbdd2ade5b815f363335da"></script>
+<p>
+    Tabs can also work as a normal <a href="http://www.yiiframework.com/doc/api/1.1/CMenu/">CMenu</a> widget, this page for example uses the following code for its left-side menu
+</p>
+<script type="text/javascript" src="http://snipt.net/embed/48eb7db877dc7316224117a7812157e7"></script>
+
 <hr />
 <h5>Mobile Tabs</h5>
 <p>

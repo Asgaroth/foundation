@@ -63,7 +63,7 @@
             <div class="two columns">
                   <?php
                     if (!empty($this -> menu)) :
-                        $this -> widget("foundation.widgets.menu.FounTabs", array('items' => $this -> menu, 'type' => 'nice vertical hide-on-phones'));
+                        $this -> widget("foundation.widgets.FounTabs", array('items' => $this -> menu, 'type' => 'nice vertical hide-on-phones'));
                     endif;
                     ?>
             </div>
@@ -86,7 +86,7 @@
             <div class="twelve columns">
                 <?php
                     if (!empty($this -> menu)) :
-                        $this -> widget("foundation.widgets.menu.FounTabs", array('items' => $this -> menu, 'type' => 'nice mobile show-on-phones'));
+                        $this -> widget("foundation.widgets.FounTabs", array('items' => $this -> menu, 'type' => 'nice mobile show-on-phones'));
                     endif;
                     ?>
             </div>
@@ -121,7 +121,7 @@
             <h3>Yii Foundation Docs</h3>
             <?php
                     if (!empty($this -> menu)) :
-                        $this -> widget("foundation.widgets.menu.FounTabs", array('items' => $this -> menu, 'type' => 'nice vertical'));
+                        $this -> widget("foundation.widgets.FounTabs", array('items' => $this -> menu, 'type' => 'nice vertical'));
                     endif;
                     ?>
             <a class="close-reveal-modal">&#215;</a>

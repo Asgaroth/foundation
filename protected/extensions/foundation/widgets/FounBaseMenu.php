@@ -3,7 +3,7 @@
  * FounBaseMenu class file.
  * @author Alex Urbano <asgaroth.belem@gmail.com>
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @package foundation.widgets.menu
+ * @package foundation.widgets
  */
 Yii::import('foundation.widgets.FounWidget');
 
@@ -13,10 +13,7 @@ abstract class FounBaseMenu extends FounWidget
 	 * @var array the menu items.
 	 */
 	public $items = array();
-	/**
-	 * @var string the item template.
-	 */
-	public $itemTemplate;
+
 	/**
 	 * @var boolean whether to encode item labels.
 	 */

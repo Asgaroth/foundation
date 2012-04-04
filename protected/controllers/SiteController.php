@@ -41,6 +41,7 @@ class SiteController extends Controller
 	    Yii::app()->user->setFlash("success", "This is a success alert (div.alert-box.success).");
 	    Yii::app()->user->setFlash("warning", "This is a warning alert (div.alert-box.warning).");
 	    Yii::app()->user->setFlash("error", "This is an error alert (div.alert-box.error). ");
+        
 	    $this->render('ui');
 	}
     
