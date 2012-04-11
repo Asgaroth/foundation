@@ -90,7 +90,7 @@ class FounTabs extends FounBaseMenu {
             } else
                 echo $menu;
 
-            echo '</dd>';
+            echo "</dd>\n";
         }
     }
 
