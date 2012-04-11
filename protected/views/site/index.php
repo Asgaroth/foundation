@@ -24,7 +24,7 @@
                 <hr />
                 
                 <h4>Changelog</h4>
-                <h5>0.0.1 <small>April 1, 2012</small></h5>
+                <h5>0.0.1 <small>April 10, 2012</small></h5>
                 <p>Initial Release</p>
                 
                 <hr />
