@@ -324,35 +324,21 @@ Yeah, we got that.</h4>
 <p>
 	Breadcrumbs are built with a UL just like pagination, and they can support span or anchor elements with 'current' and 'unavailable' classes.
 </p>
-<ul class="breadcrumbs">
-	<li>
-		<a href="#">Home</a>
-	</li>
-	<li>
-		<a href="#">Features</a>
-	</li>
-	<li class="unavailable">
-		<a href="#">Gene Splicing</a>
-	</li>
-	<li class="current">
-		<a href="#">Home</a>
-	</li>
-</ul>
-<ul class="breadcrumbs">
-	<li>
-		<span>Home</span>
-	</li>
-	<li>
-		<span>Features</span>
-	</li>
-	<li>
-		<span>Gene Splicing</span>
-	</li>
-	<li class="current">
-		<span>Home</span>
-	</li>
-</ul>
-<script type="text/javascript" src="http://snipt.net/embed/19f73f5dd789f687f48e3928a0ddc157"></script>
+<?php $this->widget("foundation.widgets.FounBreadcrumbs", array(
+                        'links' => array(
+                            'Features' => "#",
+                            'Gene Splicing' => array("unavailable" => true),
+                            'Home',
+                        ),
+                    )); ?>
+<?php $this->widget("foundation.widgets.FounBreadcrumbs", array(
+                        'links' => array(
+                            'Features',
+                            'Gene Splicing',
+                            'Home',
+                        ),
+                    )); ?>
+<script type="text/javascript" src="http://snipt.net/embed/767b7267f151a6e265160ea278d85633/"></script>
 <hr />
 <h4>Tables</h4>
 <p>
