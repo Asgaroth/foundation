@@ -286,36 +286,10 @@ Yeah, we got that.</h4>
 <p>
 	Breaking stuff up into pages? Yeah you are. Here's some pagination to get you started.
 </p>
-<ul class="pagination">
-	<li class="unavailable">
-		<a href="">&laquo;</a>
-	</li>
-	<li class="current">
-		<a href="">1</a>
-	</li>
-	<li>
-		<a href="">2</a>
-	</li>
-	<li>
-		<a href="">3</a>
-	</li>
-	<li>
-		<a href="">4</a>
-	</li>
-	<li class="unavailable">
-		<a href="">&hellip;</a>
-	</li>
-	<li>
-		<a href="">12</a>
-	</li>
-	<li>
-		<a href="">13</a>
-	</li>
-	<li>
-		<a href="">&raquo;</a>
-	</li>
-</ul>
-<script src="http://snipt.net/embed/724214a9eba6436e1565fc748693e61b"></script>
+<?php
+   $this->widget("foundation.widgets.FounPager", array("pages" => $pager, "displayFirstAndLast" => true));
+?>
+<script type="text/javascript" src="http://snipt.net/embed/fe37efa59a95b332e603ce08d0065bf7/"></script>
 <hr />
 <h4>Breadcrumbs</h4>
 <p>

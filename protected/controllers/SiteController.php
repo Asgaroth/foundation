@@ -42,7 +42,9 @@ class SiteController extends Controller
 	    Yii::app()->user->setFlash("warning", "This is a warning alert (div.alert-box.warning).");
 	    Yii::app()->user->setFlash("error", "This is an error alert (div.alert-box.error). ");
         
-	    $this->render('ui');
+        $pager = new CPagination(60);
+        
+	    $this->render('ui', compact('pager'));
 	}
     
 	public function actionOrbit(){
