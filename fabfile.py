@@ -10,7 +10,7 @@ FILE = ''
 project_folder = os.path.basename(os.path.dirname(__file__))
 
 LIVE = "html/"+project_folder
-BACKUPS = "html/backups"
+BACKUPS = "html/backups/"+project_folder
 TMP = "html/versions/"+project_folder
 VERSIONS = "../versions/"+project_folder
 
@@ -37,6 +37,16 @@ def setup(version=False):
     print "archive filename is:"+FILE
     print "backup filename is:"+BACKUPFILE
 
+
+def backupproj():
+    print "Backing up project"
+    run('tar -czf %s/%s %s' % (BACKUPS, BACKUPFILE, LIVE))
+    
+def backup():
+    if not exists(BACKUPS):
+        run('mkdir -p %s'% BACKUPS)
+    backupproj();
+
 def pack():
     print "Packing project..."
     local('git archive --format=tar HEAD | gzip > %s/%s'% (VERSIONS, FILE))
@@ -46,10 +56,7 @@ def deploy(version = False):
     pack()
     print "Uploading project..."
     put('%s/%s'% (VERSIONS, FILE), '%s/%s'% (TMP, FILE))
-    #if not exists('%s/test'% dir):
-    #    run('mkdir %s/test'% dir)
-    #run('mysqldump -u %s -p %s --add-drop-table --password=%s  > %s/saintsjd.com-database-current.mysql' % (MYSQL_USER, MYSQL_DATABASE, MYSQL_PASSWORD, BACKUPS) )
-    run('tar -czf %s/%s %s' % (BACKUPS, BACKUPFILE, LIVE))
+    backup();
     run('tar -xzf %s/%s -C %s' % (TMP, FILE, LIVE))
 
 def project_name(revision='HEAD'):
