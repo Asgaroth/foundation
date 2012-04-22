@@ -7,6 +7,7 @@ env.hosts = ['oakwebdev.com']
 
 BACKUPFILE = ''
 FILE = ''
+VERSION = ""
 project_folder = os.path.basename(os.path.dirname(__file__))
 
 LIVE = "html/"+project_folder
@@ -19,6 +20,8 @@ MYSQL_USER = ""
 MYSQL_PASSWORD = ""
 MYSQL_DATABASE = ""
 
+
+
 def vars():
     print project_folder
     print LIVE
@@ -27,16 +30,21 @@ def vars():
     print VERSIONS
 
 def setup(version=False):
-    global FILE, BACKUPFILE
+    global FILE, BACKUPFILE, VERSION
     if version is False:
         FILE  = project_name()+'.tar.gz'
+	VERSION = project_name()
     else:
         FILE  = project_folder+"-"+version+'.tar.gz'
-        
+	VERSION = project_folder+"-"+version
     BACKUPFILE = project_folder+"_"+datetime.datetime.now().strftime('%Y_%m_%d_%H-%M-%S')+'.tar.gz'
     print "archive filename is:"+FILE
     print "backup filename is:"+BACKUPFILE
 
+def export():
+    print "Packing extension..."
+    local('tar -czf %s/%s -C protected/extensions foundation ' % (VERSIONS, "yii-"+FILE))
+    local('zip -r %s/%s protected/extensions/foundation ' % (VERSIONS, "yii-"+VERSION+".zip"))
 
 def backupproj():
     print "Backing up project"

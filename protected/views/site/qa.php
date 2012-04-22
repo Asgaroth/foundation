@@ -1,70 +1,107 @@
-<h3>Buttons</h3>
-                <h4 class="subheader">We &lt;3 buttons. And so do you! That's why Foundation has multiple buttons styles and color that are not only badass out of the box, but easy to customize for your projects.</h4>
+<h3>QA</h3>
+                <h4 class="subheader">Foundation's no use to you or anyone else if it doesn't work. On this page you can see the current state of browser support, as well as known issues, for Foundation. Found a bug? <a href="mailto:foundation@zurb.com">Let us know &rarr;</a></h4>
                 <hr />
                 
-                <h4>Simple Buttons</h4>
-                <p>Foundation buttons have a number of parameters and styles - you can see a few examples below. The out of the box classes include size, color and style (square, slightly rounded, and completely rounded).</p>
-                <p><script src="http://snipt.net/embed/269a08f1db74949e80ee8b40351e609c"></script></p><br />
-                <div class="row">
-                    <div class="six columns">
-                        <a href="#" class="small blue button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="blue button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="large blue button radius">Button &raquo;</a><br /><br />
-                        <br /><br />
-                        <a href="#" class="small red button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="red button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="large red button radius">Button &raquo;</a><br /><br />
-                        <br /><br />
-                    </div>
-                    <div class="six columns">
-                        <a href="#" class="small white button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="white radius button">Button &raquo;</a><br /><br />
-                        <a href="#" class="large white button radius">Button &raquo;</a><br /><br />
-                        <br /><br />
-                        <a href="#" class="small black button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="black button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="large black button radius">Button &raquo;</a><br /><br />
-                        <br /><br />
-                    </div>
-                    <div class="six columns">
-                        <a href="#" class="small green button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="green radius button">Button &raquo;</a><br /><br />
-                        <a href="#" class="large green button radius">Button &raquo;</a><br /><br />
-                        <br /><br />
-                    </div>
+                <h4>Desktop Browser Support</h4>
+                <table>
+                    <thead>
+                        <th>&nbsp;</th>
+                        <th style="width: 25%;">Grid</th>
+                        <th style="width: 25%;">Layout / UI</th>
+                        <th style="width: 25%;">JS</th>
+                    </thead>
+                    <tr>
+                        <td><strong>Chrome (Edge)</strong></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Firefox (Edge)</strong></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Firefox 3.6</strong></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Safari (Edge)</strong></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                    </tr>
+                    <tr>
+                        <td><strong>IE 9</strong></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                    </tr>
+                    <tr>
+                        <td><strong>IE 8</strong></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                    </tr>
+                    <tr>
+                        <td><strong>IE 7</strong></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /><sup>1</sup></td>
+                    </tr>
+                    <tr>
+                        <td><strong>IE 6</strong></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/error.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/error.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/error.png" /></td>
+                    </tr>
+                    
+                </table>
+                
+                <h4>Mobile Browser Support</h4>
+                <table>
+                    <thead>
+                        <th>&nbsp;</th>
+                        <th style="width: 25%;">Grid</th>
+                        <th style="width: 25%;">Layout / UI</th>
+                        <th style="width: 25%;">JS</th>
+                    </thead>
+                    <tr>
+                        <td><strong>Mobile Webkit (iOS 5)</strong></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Android Browser</strong><sup>2</sup></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                        <td><img src="<?php echo Yii::app()->baseUrl; ?>/images/check.png" /></td>
+                    </tr><!--
 
-                </div>      
+                    <tr>
+                        <td><strong>Blackberry</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+-->
+                    
+                </table>
+                <ol>
+                    <li>Reveal uses RGBa colors, which IE7 does not support. You can manually exchange RGBa for PNGs to provide IE7 support in Reveal</li>
+                    <li>This includes the shipping browser on the Motorola XOOM and several newer Android phones. However, there is no single Android browser so testing is slightly constrained.</li>
+                </ol>
                 
+
                 <hr />
                 
-                <h4>Nice Buttons</h4>
-                <p>Nice buttons have a little more pizazz using a background image, but they still support the same classes as any other button including color, size, and corner radius.</p>
-                <p><script type="text/javascript" src="http://snipt.net/embed/ac514168311a363dd4b5130a20cd1efb"></script></p><br />
-                <div class="row">
-                    <div class="six columns">
-                        <a href="#" class="small blue nice button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="blue nice button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="large blue nice button radius">Button &raquo;</a><br /><br />
-                        <br /><br />
-                        <a href="#" class="small red nice button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="red nice button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="large red nice button radius">Button &raquo;</a><br /><br />
-                        <br /><br />
-                    </div>
-                    <div class="six columns">
-                        <a href="#" class="small white nice button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="white radius nice button">Button &raquo;</a><br /><br />
-                        <a href="#" class="large white nice button radius">Button &raquo;</a><br /><br />
-                        <br /><br />
-                        <a href="#" class="small black nice button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="black nice button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="large black nice button radius">Button &raquo;</a><br /><br />
-                        <br /><br />
-                    </div>
-                    <div class="six columns">
-                        <a href="#" class="small green nice button radius">Button &raquo;</a><br /><br />
-                        <a href="#" class="green radius nice button">Button &raquo;</a><br /><br />
-                        <a href="#" class="large green nice button radius">Button &raquo;</a><br /><br />
-                        <br /><br />
-                    </div>
-                </div>
+                <h4>Known Issues</h4>
+                <ul class="disc">
+                    <li><em>There are currently no major known issues. Visit the <a href="https://github.com/Asgaroth/foundation/issues?page=1&sort=created&state=open">Github Issues page</a> for individual reports on smaller bugs.</em></li>
+                </ul>
+                
+                
