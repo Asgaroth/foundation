@@ -32,3 +32,6 @@ protected/runtime/**
 protected/runtime/**/*
 
 fabfile.pyc
+fabfile.py
+
+bootstrap.sh
