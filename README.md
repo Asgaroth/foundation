@@ -12,7 +12,7 @@ Foundation is an easy to use, powerful, and flexible framework for building prot
 1. Download the files and extract them to you project's desired folder
 2. Add the following code to your application configuration:
 
-<pre>
+```javascript
 ...
 'preload'=>array(
     .....
@@ -25,7 +25,7 @@ Foundation is an easy to use, powerful, and flexible framework for building prot
     
 ),
 ...
-</pre>
+```
 
 3. Start using it, check the documentation on using [forms](http://foundation.oakwebdev.com/index.php?r=site/forms "forms"), and [UI Components](http://foundation.oakwebdev.com/index.php?r=site/ui "UI Components")
 
