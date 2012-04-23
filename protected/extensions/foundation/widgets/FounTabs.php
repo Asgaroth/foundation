@@ -82,14 +82,7 @@ class FounTabs extends FounBaseMenu {
             }
 
             echo CHtml::openTag('dd', $item['itemOptions']);
-            $menu = $this -> renderItem($item);
-
-            if (isset($this -> itemTemplate) || isset($item['template'])) {
-                $template = isset($item['template']) ? $item['template'] : $this -> itemTemplate;
-                echo strtr($template, array('{menu}' => $menu));
-            } else
-                echo $menu;
-
+            echo $this -> renderItem($item);
             echo "</dd>\n";
         }
     }
