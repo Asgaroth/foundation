@@ -18,38 +18,6 @@ class FounNavBar extends FounWidget
 	 * @since 0.9.8
 	 */
 	public $items = array();
-	/**
-	 * @var boolean whether the nav span over the full width. Defaults to false.
-	 * @since 0.9.8
-	 */
-	public $fluid = false;
-	/**
-	 * @var boolean whether the nav bar is fixed to the top of the page. Defaults to true.
-	 * @since 0.9.8
-	 */
-	public $fixed = true;
-	/**
-	 * @var boolean whether to enable collapsing on narrow screens. Default to false.
-	 */
-	public $collapse = false;
-
-	/**
-	 * Initializes the widget.
-	 */
-	public function init()
-	{
-		if ($this->brand !== false)
-		{
-			if (!isset($this->brand))
-				$this->brand = CHtml::encode(Yii::app()->name);
-
-			if (!isset($this->brandUrl))
-				$this->brandUrl = Yii::app()->homeUrl;
-		}
-
-		if ($this->collapse)
-			Yii::app()->bootstrap->registerCollapse();
-	}
 
 	/**
 	 * Runs the widget.
@@ -57,60 +25,71 @@ class FounNavBar extends FounWidget
 	public function run()
 	{
 		if (isset($this->htmlOptions['class']))
-			$this->htmlOptions['class'] .= ' navbar';
+			$this->htmlOptions['class'] .= ' nav-bar';
 		else
-			$this->htmlOptions['class'] = 'navbar';
+			$this->htmlOptions['class'] = 'nav-bar';
 
-		if ($this->fixed)
-			$this->htmlOptions['class'] .= ' navbar-fixed-top';
-		else
-			$this->htmlOptions['class'] .= ' navbar-static';
-
-		if (isset($this->brandOptions['class']))
-			$this->brandOptions['class'] .= ' brand';
-		else
-			$this->brandOptions['class'] = 'brand';
-
-		if (isset($this->brandUrl))
-			$this->brandOptions['href'] = $this->brandUrl;
-
-		$containerCssClass = $this->fluid ? 'container-fluid' : 'container';
-
-		echo CHtml::openTag('div', $this->htmlOptions);
-		echo '<div class="navbar-inner"><div class="'.$containerCssClass.'">';
-
-		if ($this->collapse)
-		{
-			echo '<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">';
-			echo '<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>';
-			echo '</a>';
-		}
-
-        if ($this->brand !== false)
-            echo CHtml::openTag('a', $this->brandOptions).$this->brand.'</a>';
-
-		if ($this->collapse)
-			echo '<div class="nav-collapse">';
+		echo CHtml::openTag('ul', $this->htmlOptions);
 
 		foreach ($this->items as $item)
 		{
-			if (is_string($item))
-				echo $item;
-			else
-			{
-				if (isset($item['class']))
-				{
-					$className = $item['class'];
-					unset($item['class']);
-
-					$this->controller->widget($className, $item);
-				}
+			if (is_string($item)){
+				echo "<li>".$item."</li>";
+			}else{
+			    $this->renderItem($item);
 			}
 		}
 
-		if ($this->collapse)
-			echo '</div>';
-
-		echo '</div></div></div>';
+        echo '</ul>';
 	}
+    
+    /**
+     * Renders a single item in the menu.
+     * @param array $item the item configuration
+     * @return string the rendered item
+     */
+    protected function renderItem($item)
+    {
+        if(isset($item["flyout"])){
+            if(isset($item["flyout"][2]) && $item["flyout"][2]){
+                echo '<li class="has-flyout hide-on-tablets">'."\n";
+            }else{
+                echo '<li class="has-flyout">'."\n";
+            }
+        }else{
+            echo "<li>\n";
+        }
+        if (!isset($item['linkOptions']))
+            $item['linkOptions'] = array("class" => "main");
+        else {
+            if (isset($item['linkOptions']['class'])){
+                $item['linkOptions']['class'] .= " main";
+            }else{
+                $item['linkOptions']['class'] = "main";
+            }
+            
+        }
+
+        if (!isset($item['header']) && !isset($item['url']))
+            $item['url'] = '#';
+
+        if (isset($item['url']))
+            echo CHtml::link($item['label'], $item['url'], $item['linkOptions']);
+        else
+            echo $item['label'];
+
+        if(isset($item["flyout"])){
+            echo '<a href="#" class="flyout-toggle"><span></span></a>'."\n";
+            if(is_string($item["flyout"])){
+                echo '<div class="flyout">'."\n";
+                echo $item["flyout"]."\n";
+                echo '</div>'."\n";
+            }else{
+                $flyout_options = array("class" => "flyout ".$item["flyout"][0]);
+                echo CHtml::tag('div', $flyout_options, $item["flyout"][1]);
+            }
+        }
+        
+        echo "</li>";
+    }
 }

@@ -162,102 +162,85 @@ Yeah, we got that.</h4>
 <p>
 	<em>Note: In IE7 the dropdowns are obscured by the code snippet below. This is due to IE7s iframe z-index bug, and is not an issue with the dropdowns themselves. Try not to have dropdown elements over an iframe.</em>
 </p>
-<ul class="nav-bar">
-	<li>
-		<a href="#" class="main">Nav Item 1</a>
-	</li>
-	<li class="has-flyout">
-		<a href="#" class="main">Nav Item 2</a>
-		<a href="#" class="flyout-toggle"><span> </span></a>
-		<div class="flyout small">
-			<h5>Small Example (200px)</h5>
-			<p>
-				This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text.
-			</p>
-		</div>
-	</li>
-	<li class="has-flyout">
-		<a href="#" class="main">Nav Item 3</a>
-		<a href="#" class="flyout-toggle"><span> </span></a>
-		<div class="flyout">
-			<div class="row">
-				<div class="twelve columns">
-					<h5>Medium Example (400px)</h5>
-					<div class="row">
-						<div class="six columns">
-							<p>
-								This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text.
-							</p>
-						</div>
-						<div class="six columns">
-							<p>
-								This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</li>
-	<li class="has-flyout hide-on-tablets">
-		<a href="#" class="main">Nav Item 4</a>
-		<a href="#" class="flyout-toggle"><span> </span></a>
-		<div class="flyout large right">
-			<div class="row">
-				<div class="twelve columns">
-					<h5>Large Example (600px)</h5>
-					<div class="row">
-						<div class="four columns">
-							<p>
-								This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text.
-							</p>
-							<p>
-								This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text.
-							</p>
-						</div>
-						<div class="four columns">
-							<p>
-								This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text.
-							</p>
-							<p>
-								This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text.
-							</p>
-						</div>
-						<div class="four columns">
-							<img src="http://placehold.it/200x250" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</li>
-</ul>
-<script type="text/javascript" src="http://snipt.net/embed/7dd4b241f040a3437468b7e7176429a6"></script>
+<?php
+    $this -> widget("foundation.widgets.FounNavBar", array('items' => array(
+            array('label' => 'Nav Item 1'),
+            array('label' => 'Nav Item 2', 'flyout' => array('small', '<h5>Small Example (200px)</h5>
+            <p>
+                This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text.
+            </p>')),
+            array('label' => 'Nav Item 3', 'flyout' => '
+            <div class="row">
+                <div class="twelve columns">
+                    <h5>Medium Example (400px)</h5>
+                    <div class="row">
+                        <div class="six columns">
+                            <p>
+                                This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text.
+                            </p>
+                        </div>
+                        <div class="six columns">
+                            <p>
+                                This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>'),
+            array('label' => 'Nav Item 4', 'flyout' => array(
+                'large right',
+                '<div class="row">
+                <div class="twelve columns">
+                    <h5>Large Example (600px)</h5>
+                    <div class="row">
+                        <div class="four columns">
+                            <p>
+                                This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text.
+                            </p>
+                            <p>
+                                This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text.
+                            </p>
+                        </div>
+                        <div class="four columns">
+                            <p>
+                                This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text.
+                            </p>
+                            <p>
+                                This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text. This is example text.
+                            </p>
+                        </div>
+                        <div class="four columns">
+                            <img src="http://placehold.it/200x250" />
+                        </div>
+                    </div>
+                </div>
+            </div>', true
+            )),
+    )));
+?>
+<script type="text/javascript" src="http://snipt.net/embed/137ac85ddd84e1d4e5444bfff344d8b7/"></script>
 <p>
 	You can also drop inputs into the nav in place of an anchor. Here you can see a search input.
 </p>
-<ul class="nav-bar">
-	<li>
-		<input type="search" />
-	</li>
-	<li class="has-flyout">
-		<a href="" class="main">Nav Element</a>
-		<a href="http://www.zurb.com" class="flyout-toggle"><span> </span></a>
-		<div class="flyout">
-			<ul>
-				<li>
-					<a href="">This is a link in a UL.</a>
-				</li>
-				<li>
-					<a href="">This is a link in a UL.</a>
-				</li>
-				<li>
-					<a href="">This is a link in a UL.</a>
-				</li>
-			</ul>
-		</div>
-	</li>
-</ul>
+<?php
+$this -> widget("foundation.widgets.FounNavBar", array('items' => array(
+    CHtml::textField("search"),
+    array('label' => 'Nav Element', 'flyout' => '
+    <ul>
+                <li>
+                    <a href="">This is a link in a UL.</a>
+                </li>
+                <li>
+                    <a href="">This is a link in a UL.</a>
+                </li>
+                <li>
+                    <a href="">This is a link in a UL.</a>
+                </li>
+            </ul>
+    '),
+)));
+?>
+<script type="text/javascript" src="http://snipt.net/embed/b05d3464cc763fdca9b71bbaffb610e8/"></script>
 <hr />
 <h4>Sub Nav</h4>
 <p>

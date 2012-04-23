@@ -7,7 +7,7 @@
  */
 
 /**
- * Bootstrap base widget.
+ * Foundation base widget.
  */
 class FounWidget extends CWidget
 {
