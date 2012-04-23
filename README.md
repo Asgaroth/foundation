@@ -11,8 +11,8 @@ Foundation is an easy to use, powerful, and flexible framework for building prot
 
 1. Download the files and extract them to you project's desired folder
 2. Add the following code to your application configuration:
-~~~
-[php]
+
+```javascript
 ...
 'preload'=>array(
     .....
@@ -25,7 +25,8 @@ Foundation is an easy to use, powerful, and flexible framework for building prot
     
 ),
 ...
-~~~
+```
+
 3. Start using it, check the documentation on using [forms](http://foundation.oakwebdev.com/index.php?r=site/forms "forms"), and [UI Components](http://foundation.oakwebdev.com/index.php?r=site/ui "UI Components")
 
 > Info: This is a work in progress, not all components of foundation are to be found in the Yii extension yet. but you can still use them as you normally would use Foundation.
