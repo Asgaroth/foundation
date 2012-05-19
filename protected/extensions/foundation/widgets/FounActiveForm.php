@@ -335,7 +335,16 @@ class FounActiveForm extends CActiveForm {
     }
 	
 	
-	
+	/**
+     * Renders a password field input row.
+     * @param CModel $model the data model
+     * @param string $attribute the attribute
+     * @param array $htmlOptions additional HTML attributes
+     * @return string the generated row
+     */
+    public function passwordFieldRow($model, $attribute, $htmlOptions = array()) {
+        return $this -> inputRow(FounInput::TYPE_PASSWORD, $model, $attribute, null, $htmlOptions);
+    }
 	
 	
 	
@@ -356,16 +365,7 @@ class FounActiveForm extends CActiveForm {
 		return $this -> inputRow(BootInput::TYPE_FILE, $model, $attribute, null, $htmlOptions);
 	}
 
-	/**
-	 * Renders a password field input row.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes
-	 * @return string the generated row
-	 */
-	public function passwordFieldRow($model, $attribute, $htmlOptions = array()) {
-		return $this -> inputRow(BootInput::TYPE_PASSWORD, $model, $attribute, null, $htmlOptions);
-	}
+	
 
 	/**
 	 * Renders a captcha row.

@@ -48,17 +48,6 @@ class FounInputNormal extends FounInput{
 	}
 
 	/**
-	 * Renders a password field.
-	 * @return string the rendered content
-	 */
-	protected function passwordField()
-	{
-		echo $this->getLabel();
-		echo $this->form->passwordField($this->model, $this->attribute, $this->htmlOptions);
-		echo $this->getError().$this->getHint();
-	}
-
-	/**
 	 * Renders a list of inline radio buttons.
 	 * @return string the rendered content
 	 */

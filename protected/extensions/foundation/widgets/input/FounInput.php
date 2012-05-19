@@ -19,10 +19,10 @@ abstract class FounInput extends CInputWidget {
 	const TYPE_RADIO = 'radiobutton';
 	const TYPE_DROPDOWN = 'dropdownlist';
 	const TYPE_CHECKBOXLIST = 'checkBoxList';
+	const TYPE_PASSWORD = 'password';
 
 	const TYPE_CHECKBOXLIST_INLINE = 'checkboxlist_inline';
 	const TYPE_FILE = 'filefield';
-	const TYPE_PASSWORD = 'password';
 	const TYPE_RADIOLIST_INLINE = 'radiobuttonlist_inline';
 	const TYPE_CAPTCHA = 'captcha';
 
@@ -106,6 +106,20 @@ abstract class FounInput extends CInputWidget {
 		}
 		$this->field($this -> form -> textField($this -> model, $this -> attribute, $this -> htmlOptions)) ;
 	}
+    
+    /**
+     * Renders a password field.
+     * @return string the rendered content
+     */
+    protected function password()
+    {
+        if (isset($this -> htmlOptions["class"])) {
+            $this -> htmlOptions["class"] .= " input-text";
+        } else {
+            $this -> htmlOptions["class"] = "input-text";
+        }
+        $this->field($this->form->passwordField($this->model, $this->attribute, $this->htmlOptions)) ;
+    }
 
 	/**
 	 * Renders a textarea.
@@ -259,13 +273,6 @@ abstract class FounInput extends CInputWidget {
 	 * @abstract
 	 */
 	abstract protected function fileField();
-
-	/**
-	 * Renders a password field.
-	 * @return string the rendered content
-	 * @abstract
-	 */
-	abstract protected function passwordField();
 
 	/**
 	 * Renders a list of inline radio buttons.
