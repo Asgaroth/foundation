@@ -12,7 +12,7 @@
 class FounWidget extends CWidget
 {
 	/**
-	 * @var array the options for the Bootstrap JavaScript plugin.
+	 * @var array the options for the JavaScript plugin.
 	 */
 	public $options = array();
 	/**

@@ -2,6 +2,13 @@
 
 class SiteController extends Controller
 {
+    
+    public function actions(){
+        return array(
+            'captcha' => array('class' => 'CCaptchaAction')
+        );
+    }
+    
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.

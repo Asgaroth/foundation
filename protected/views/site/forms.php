@@ -16,6 +16,9 @@
                 )); ?>
                 <p>Inputs support a number of different base classes. Any text input has a class of 'input-text' and supports several sizes:</p>
                 <?php echo $form->textFieldRow($model, "field1"); ?>    
+                <?php echo $form->passwordFieldRow($model, "field1_1"); ?>    
+                <?php echo $form->fileFieldRow($model, "field1_2"); ?>    
+                <?php echo $form->captchaRow($model, "field1_3"); ?>    
                 <?php echo $form->textFieldRow($model, "field2", array("class" => "small")); ?>    
                 <?php echo $form->textFieldRow($model, "field3", array("class" => "medium")); ?>    
                 <?php echo $form->textFieldRow($model, "field4", array("class" => "large")); ?>    

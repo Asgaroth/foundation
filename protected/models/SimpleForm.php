@@ -3,6 +3,9 @@
 class SimpleForm extends CFormModel
 {
 	public $field1;
+	public $field1_1;
+	public $field1_2;
+	public $field1_3;
 	public $field2;
 	public $field3;
 	public $field4;
@@ -59,6 +62,9 @@ class SimpleForm extends CFormModel
 		return array(
 		     //Normal
 			'field1'=>'Standard Input',
+			'field1_1'=>'Password Input',
+			'field1_2'=>'File Input',
+			'field1_3'=>'Captcha Input',
 			'field2'=>'Small Input',
 			'field3'=>'Medium Input',
 			'field4'=>'Large Input',
