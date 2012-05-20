@@ -51,7 +51,7 @@ class Foundation extends CApplicationComponent {
      * Registers the core JavaScript plugins.
      * @since 0.9.8
      */
-    protected function registerJs( ) {
+    public function registerJs( ) {
         Yii::app( )->clientScript->registerCoreScript( 'jquery' );
         $this->registerScriptFile( 'modernizr.foundation.js' );
         $this->registerScriptFile( 'foundation.js' );
