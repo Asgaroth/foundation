@@ -6,7 +6,7 @@
  * @package foundation.widgets
  */
 
-Yii::import('foundation.widgets.FounWidget');
+Yii::import('foundation.widgets.FounBaseMenu');
 
 /**
  * Foundation subnavigation widget.
