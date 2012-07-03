@@ -15,6 +15,7 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+	    $this->pageTitle = 'Get Started';
 		$this->render('index');
 	}
 

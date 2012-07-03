@@ -53,8 +53,12 @@ class Foundation extends CApplicationComponent {
      */
     public function registerJs( ) {
         Yii::app( )->clientScript->registerCoreScript( 'jquery' );
+        $this->registerScriptFile( 'jquery.reveal.js' );
+        $this->registerScriptFile( 'jquery.orbit-1.4.0.js' );
+        $this->registerScriptFile( 'jquery.customforms.js' );
+        $this->registerScriptFile( 'jquery.placeholder.min.js' );
         $this->registerScriptFile( 'modernizr.foundation.js' );
-        $this->registerScriptFile( 'foundation.js' );
+        $this->registerScriptFile( 'jquery.tooltips.js' );
         $this->registerScriptFile( 'app.js' );
     }
 
@@ -81,7 +85,7 @@ class Foundation extends CApplicationComponent {
      */
     protected function getAssetsUrl( ) {
         if( $this->_assetsUrl == null ) {
-            $assetsPath = Yii::getPathOfAlias( 'foundation.lib.foundation' );
+            $assetsPath = Yii::getPathOfAlias( 'foundation.lib.foundation3' );
             $this->_assetsUrl = Yii::app( )->assetManager->publish( $assetsPath, false, -1, YII_DEBUG );
         }
         return $this->_assetsUrl;

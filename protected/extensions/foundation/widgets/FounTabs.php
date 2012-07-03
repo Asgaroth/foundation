@@ -75,10 +75,10 @@ class FounTabs extends FounBaseMenu {
                 $cssClass = 'active';
             }
 
-            if (isset($item['linkOptions']['class'])) {
-                $item['linkOptions']['class'] .= ' ' . $cssClass;
+            if (isset($item['itemOptions']['class'])) {
+                $item['itemOptions']['class'] .= ' ' . $cssClass;
             } else {
-                $item['linkOptions']['class'] = $cssClass;
+                $item['itemOptions']['class'] = $cssClass;
             }
 
             echo CHtml::openTag('dd', $item['itemOptions']);
