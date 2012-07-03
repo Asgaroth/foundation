@@ -19,6 +19,12 @@ class SiteController extends Controller
 		$this->render('index');
 	}
 
+
+	public function actionTypo(){
+	    $this->render('typo');
+        return;
+	}
+    
 	public function actionGrid(){
 	    $this->render('grid');
         return;
