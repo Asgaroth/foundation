@@ -61,8 +61,8 @@ class SimpleForm extends CFormModel
 	{
 		return array(
 		     //Normal
-			'field1'=>'Standard Input',
-			'field1_1'=>'Password Input',
+			'field1'=>'This is a label.',
+			'field1_1'=>'Address',
 			'field1_2'=>'File Input',
 			'field1_3'=>'Captcha Input',
 			'field2'=>'Small Input',

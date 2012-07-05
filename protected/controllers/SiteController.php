@@ -43,8 +43,7 @@ class SiteController extends Controller
         $model->field31 = 1;
         $model->field32 = 2;
         $model->validate();
-	    $this->render('forms', compact('model'));
-	}
+	    $this->render('forms', compact('model'));	}
     
 	public function actionLayout(){
 	    $this->render('layout');

@@ -1,25 +1,79 @@
 <h3>Forms</h3>
-                <h4 class="subheader">Forms are not a lot of fun. We've taken that lack of fun and dodged it with this ready-made code. In this release there are two sets of forms styles - basic and nice. Both are simple, both are flexible, both are easy to customize. <strong>Make sure to include app.js if you're going to use these forms.</strong></h4>
+                <h4 class="subheader">We set out in Foundation 3 to create an easy to handle, powerful, and versatile form layout system. A combination of form styles and the Foundation grid means you can do basically anything.</h4>
+
+                <h4>The Basics</h4>
+                <p>Form elements in Foundation 3 are styled based on their type attribute rather than <code>.input-text</code> classes, so the SCSS/CSS is much simpler.</p>
+                <p>Inputs in Foundation 3 have another major change &mdash; <strong>they are full width by default.</strong> That means that inputs will run as wide as the column that contains them. However, you have two options which make these forms extremely versatile:</p>
+                <ul class="disc">
+                  <li>You can size inputs using column sizes, like <code>.six</code>.</li>
+                  <li>You can create <code>row</code> elements inside your form and use columns for the form, including inputs, labels and more. Rows inside a form inherit some special padding to even up input spacing.</li>
+                </ul>
+
                 <hr />
+
                 
                 <h4>Forms</h4>
-                
                 <p>Forms in Yii Foundation are created using the FounActiveForm</p>
-                <script type="text/javascript" src="http://snipt.net/embed/3d7e62153b2b0c416511612f35574a2a"></script>
+                <script src="https://gist.github.com/3050940.js"> </script>
+                
+                <h4>Row Layouts</h4>
+                <p>Here's an example of a form layout controlled with rows and columns.</p>
                 
                 <?php 
                 /**
                  * @var FounActiveForm
                  */
-                $form=$this->beginWidget('foundation.widgets.FounActiveForm', array(
-                    'id'=>'form',
-                )); ?>
-                <p>Inputs support a number of different base classes. Any text input has a class of 'input-text' and supports several sizes:</p>
-                <?php echo $form->textFieldRow($model, "field1"); ?>    
-                <?php echo $form->passwordFieldRow($model, "field1_1"); ?>    
-                <?php echo $form->fileFieldRow($model, "field1_2"); ?>    
-                <?php echo $form->captchaRow($model, "field1_3"); ?>    
-                <?php echo $form->textFieldRow($model, "field2", array("class" => "small")); ?>    
+                $form=$this->beginWidget('foundation.widgets.FounActiveForm'); ?>
+                <?php echo $form->textFieldRow($model, "field1", array("placeholder" => "Standard Input")); ?>    
+                <?php echo $form->textFieldRow($model, "field1_1", array("placeholder" => "Street")); ?>  
+                <div class="row">
+                  <div class="six columns">
+                      <?php echo $form->textField( $model, "field1_2", array("placeholder" => "City")); ?>
+                  </div>
+                  <div class="three columns">
+                      <?php echo $form->textField( $model, "field1_3", array("placeholder" => "State")); ?>
+                  </div>
+                  <div class="three columns">
+                      <?php echo $form->textField( $model, "field2", array("placeholder" => "ZIP")); ?>
+                  </div>
+                </div>
+                 <?php $this->endWidget(); ?>
+                <script src="https://gist.github.com/3050987.js"> </script>
+                
+                <p>Sometimes you want a form with labels to the left of your inputs. Piece of cake.
+
+                  <form>
+                    <div class="row">
+                      <div class="two mobile-one columns">
+                        <label class="right">Address Name:</label>
+                      </div>
+                      <div class="ten mobile-three columns">
+                        <input type="text" placeholder="e.g. Home" class="eight" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="two mobile-one columns">
+                        <label class="right">City:</label>
+                      </div>
+                      <div class="ten mobile-three columns">
+                        <input type="text" class="eight" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="two mobile-one columns">
+                        <label class="right">ZIP:</label>
+                      </div>
+                      <div class="ten mobile-three columns">
+                        <input type="text" class="three" />
+                      </div>
+                    </div>
+                  </form>
+
+                <?php 
+                /**
+                 * @var FounActiveForm
+                 */
+                $form=$this->beginWidget('foundation.widgets.FounActiveForm'); ?>
                 <?php echo $form->textFieldRow($model, "field3", array("class" => "medium")); ?>    
                 <?php echo $form->textFieldRow($model, "field4", array("class" => "large")); ?>    
                 <?php echo $form->textFieldRow($model, "field5", array("class" => "expand")); ?>    

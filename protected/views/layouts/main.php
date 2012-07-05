@@ -48,6 +48,7 @@
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-6958144-5']);
+  _gaq.push(['_setDomainName', 'oakwebdev.com']);
   _gaq.push(['_trackPageview']);
 
   (function() {

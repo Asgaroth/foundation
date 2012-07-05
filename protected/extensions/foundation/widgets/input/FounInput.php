@@ -34,7 +34,7 @@ class FounInput extends CInputWidget {
      * filefield, password,
      * radiobutton, radiobuttonlist, textarea, textfield, and captcha.
      */
-    public $type;
+    public $type = self::TYPE_TEXT;
     /**
      * @var array the data for list inputs.
      */
@@ -53,10 +53,6 @@ class FounInput extends CInputWidget {
 
         if( !isset( $this->model ) ) {
             throw new CException( __CLASS__.': Failed to initialize widget! Model is not set.' );
-        }
-
-        if( !isset( $this->type ) ) {
-            throw new CException( __CLASS__.': Failed to initialize widget! Input type is not set.' );
         }
 
         if( isset( $this->htmlOptions["labelHtmlOptions"] ) ) {
@@ -98,11 +94,6 @@ class FounInput extends CInputWidget {
      * @return string the rendered content
      */
     protected function textfield( ) {
-        if( isset( $this->htmlOptions["class"] ) ) {
-            $this->htmlOptions["class"] .= " input-text";
-        } else {
-            $this->htmlOptions["class"] = "input-text";
-        }
         $this->field( $this->form->textField( $this->model, $this->attribute, $this->htmlOptions ) );
     }
 
