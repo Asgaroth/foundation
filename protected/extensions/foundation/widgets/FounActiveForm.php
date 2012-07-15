@@ -16,6 +16,18 @@ class FounActiveForm extends CActiveForm {
     const TYPE_NICE = 'nice';
     const TYPE_CUSTOM = 'custom';
 
+    // Form types.
+    const TYPE_VERTICAL = 'vertical';
+    const TYPE_INLINE = 'inline';
+    const TYPE_HORIZONTAL = 'horizontal';
+    const TYPE_SEARCH = 'search';
+
+    // Input classes.
+    const INPUT_HORIZONTAL = 'bootstrap.widgets.input.BootInputHorizontal';
+    const INPUT_INLINE = 'bootstrap.widgets.input.BootInputInline';
+    const INPUT_SEARCH = 'bootstrap.widgets.input.BootInputSearch';
+    const INPUT_VERTICAL = 'bootstrap.widgets.input.BootInputVertical';
+
     /**
      * @var string the form type. See class constants.
      */

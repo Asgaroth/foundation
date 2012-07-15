@@ -1,226 +1,318 @@
 <h3>Forms</h3>
-                <h4 class="subheader">We set out in Foundation 3 to create an easy to handle, powerful, and versatile form layout system. A combination of form styles and the Foundation grid means you can do basically anything.</h4>
+<h4 class="subheader">We set out in Foundation 3 to create an easy to handle, powerful, and versatile form layout system. A combination of form styles and the Foundation grid means you can do basically anything.</h4>
 
-                <h4>The Basics</h4>
-                <p>Form elements in Foundation 3 are styled based on their type attribute rather than <code>.input-text</code> classes, so the SCSS/CSS is much simpler.</p>
-                <p>Inputs in Foundation 3 have another major change &mdash; <strong>they are full width by default.</strong> That means that inputs will run as wide as the column that contains them. However, you have two options which make these forms extremely versatile:</p>
-                <ul class="disc">
-                  <li>You can size inputs using column sizes, like <code>.six</code>.</li>
-                  <li>You can create <code>row</code> elements inside your form and use columns for the form, including inputs, labels and more. Rows inside a form inherit some special padding to even up input spacing.</li>
-                </ul>
+<h4>The Basics</h4>
+<p>Form elements in Foundation 3 are styled based on their type attribute rather than <code>.input-text</code> classes, so the SCSS/CSS is much simpler.</p>
+<p>Inputs in Foundation 3 have another major change &mdash; <strong>they are full width by default.</strong> That means that inputs will run as wide as the column that contains them. However, you have two options which make these forms extremely versatile:</p>
+<ul class="disc">
+  <li>You can size inputs using column sizes, like <code>.six</code>.</li>
+  <li>You can create <code>row</code> elements inside your form and use columns for the form, including inputs, labels and more. Rows inside a form inherit some special padding to even up input spacing.</li>
+</ul>
 
-                <hr />
+<hr />
 
-                
-                <h4>Forms</h4>
-                <p>Forms in Yii Foundation are created using the FounActiveForm</p>
-                <script src="https://gist.github.com/3050940.js"> </script>
-                
-                <h4>Row Layouts</h4>
-                <p>Here's an example of a form layout controlled with rows and columns.</p>
-                
-                <?php 
-                /**
-                 * @var FounActiveForm
-                 */
-                $form=$this->beginWidget('foundation.widgets.FounActiveForm'); ?>
-                <?php echo $form->textFieldRow($model, "field1", array("placeholder" => "Standard Input")); ?>    
-                <?php echo $form->textFieldRow($model, "field1_1", array("placeholder" => "Street")); ?>  
-                <div class="row">
-                  <div class="six columns">
-                      <?php echo $form->textField( $model, "field1_2", array("placeholder" => "City")); ?>
-                  </div>
-                  <div class="three columns">
-                      <?php echo $form->textField( $model, "field1_3", array("placeholder" => "State")); ?>
-                  </div>
-                  <div class="three columns">
-                      <?php echo $form->textField( $model, "field2", array("placeholder" => "ZIP")); ?>
-                  </div>
+
+<h4>Forms</h4>
+<p>Forms in Yii Foundation are created using the FounActiveForm</p>
+<script src="https://gist.github.com/3050940.js"> </script>
+
+<h4>Row Layouts</h4>
+<p>Here's an example of a form layout controlled with rows and columns.</p>
+
+<?php 
+/**
+ * @var FounActiveForm
+ */
+$form=$this->beginWidget('foundation.widgets.FounActiveForm'); ?>
+<?php echo $form->textFieldRow($model, "field1", array("placeholder" => "Standard Input")); ?>    
+<?php echo $form->textFieldRow($model, "field1_1", array("placeholder" => "Street")); ?>  
+<div class="row">
+  <div class="six columns">
+      <?php echo $form->textField( $model, "field1_2", array("placeholder" => "City")); ?>
+  </div>
+  <div class="three columns">
+      <?php echo $form->textField( $model, "field1_3", array("placeholder" => "State")); ?>
+  </div>
+  <div class="three columns">
+      <?php echo $form->textField( $model, "field2", array("placeholder" => "ZIP")); ?>
+  </div>
+</div>
+<?php $this->endWidget(); ?>
+<script src="https://gist.github.com/3050987.js"> </script>
+
+<p>Sometimes you want a form with labels to the left of your inputs. Piece of cake.
+    You can add a class of <code>.right</code> to a label to have it align to the right,
+    and if your label is next to an input (in another column) adding a class of <code>.inline</code>
+    will have it vertically center against an input.
+</p>
+
+<?php $form=$this->beginWidget('foundation.widgets.FounActiveForm'); ?>
+<div class="row">
+    <div class="two mobile-one columns">
+        <?php echo $form->labelEx( $model, "field3", array("class" => 'right')); ?>
+    </div>
+    <div class="ten mobile-three columns">
+        <?php echo $form->textField( $model, "field3", array("placeholder" => "e.g. Home", "class" => 'eight')); ?>
+    </div>
+</div>
+<div class="row">
+    <div class="two mobile-one columns">
+        <?php echo $form->labelEx( $model, "field4", array("class" => 'right')); ?>
+    </div>
+    <div class="ten mobile-three columns">
+        <?php echo $form->textField( $model, "field4", array("class" => 'eight')); ?>
+    </div>
+</div>
+<div class="row">
+    <div class="two mobile-one columns">
+        <?php echo $form->labelEx( $model, "field5", array("class" => 'right')); ?>
+    </div>
+    <div class="ten mobile-three columns">
+        <?php echo $form->textField( $model, "field4", array("class" => 'three')); ?>
+    </div>
+</div>
+<?php $this->endWidget(); ?>
+
+<script src="https://gist.github.com/3113919.js"> </script>
+
+<hr />
+
+<h4>Fieldsets</h4>
+<p>Simple elements that can contain all or part of a form to create better division.</p>
+<?php $form=$this->beginWidget('foundation.widgets.FounActiveForm'); ?>
+<fieldset>
+
+    <legend>Fieldset Name</legend>   
+    <?php echo $form->textFieldRow($model, "field6", array('placeholder' => 'Standard Input')); ?>    
+
+    <?php echo $form->textFieldRow($model, "field7"); ?>    
+    <?php echo $form->textField($model, "field8", array('class' => 'six')); ?>    
+
+</fieldset>
+<?php $this->endWidget(); ?>
+
+<script src="https://gist.github.com/3113937.js"> </script>
+
+<hr />
+
+
+<h4>Labels and Actions with Collapsed Columns</h4>
+          <p>Foundation forms support actions tied to buttons, and prefix / postfix labels, through a versatile approach using special grid properties. Essentially you can use a 'collapsed' row to create label / action / input combinations. Here are a few examples.</p>
+
+          <label>Input with a prefix character</label>
+          <div class="row">
+            <div class="four columns">
+              <div class="row collapse">
+                <div class="two mobile-one columns">
+                  <span class="prefix">#</span>
                 </div>
-                 <?php $this->endWidget(); ?>
-                <script src="https://gist.github.com/3050987.js"> </script>
-                
-                <p>Sometimes you want a form with labels to the left of your inputs. Piece of cake.
-
-                  <form>
-                    <div class="row">
-                      <div class="two mobile-one columns">
-                        <label class="right">Address Name:</label>
-                      </div>
-                      <div class="ten mobile-three columns">
-                        <input type="text" placeholder="e.g. Home" class="eight" />
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="two mobile-one columns">
-                        <label class="right">City:</label>
-                      </div>
-                      <div class="ten mobile-three columns">
-                        <input type="text" class="eight" />
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="two mobile-one columns">
-                        <label class="right">ZIP:</label>
-                      </div>
-                      <div class="ten mobile-three columns">
-                        <input type="text" class="three" />
-                      </div>
-                    </div>
-                  </form>
-
-                <?php 
-                /**
-                 * @var FounActiveForm
-                 */
-                $form=$this->beginWidget('foundation.widgets.FounActiveForm'); ?>
-                <?php echo $form->textFieldRow($model, "field3", array("class" => "medium")); ?>    
-                <?php echo $form->textFieldRow($model, "field4", array("class" => "large")); ?>    
-                <?php echo $form->textFieldRow($model, "field5", array("class" => "expand")); ?>    
-                <?php echo $form->textFieldRow($model, "field6", array("class" => "oversize")); ?>    
-                <h5>Inline Labels</h5>
-                <p>Inline labels are accomplished using the HTML5 Placeholder attribute, with a built-in JS fallback.</p>
-                <?php echo $form->textFieldRow($model, "field7", array("placeholder" => "Inline label", 'labelHtmlOptions' => array("label" => false))); ?>
-                <script type="text/javascript" src="http://snipt.net/embed/11edadb787658f3d97729643a09cb881"></script>    
-                <h5>Error States</h5>
-                <p>Error states can be applied in two ways:</p>
-                <ul class="disc">
-                    <li>Using a wrapper for div.form-field.error, which will apply styles to text inputs, labels, and a small.error message (optional). This is ideal for programmatically generated forms.</li>
-                    <li>You can also apply the .red class to labels, inputs, and also append a small.error.</li>
-                </ul>
-                <?php echo $form->textFieldRow($model, "field8", array("class" => "medium")); ?>    
-                <p>Error states in Yii Foundation use the wrapper method, you dont have to do anything to get the styles, the extension takes care of it for you</p>
-                <hr />
-                <?php echo $form->textAreaRow($model, "field9"); ?>    
-                <?php echo $form->textAreaRow($model, "field10", array("placeholder" => "This is a text area")); ?>    
-                <?php echo $form->checkboxRow($model, "field11"); ?>    
-                <?php echo $form->radioButtonRow($model, "field12"); ?>
-                <?php echo $form->dropDownListRow($model, "field13", array("1" => "This is a dropdown", "2" => "This is another option", "3" => "Look, a third option")); ?>
-                <script type="text/javascript" src="http://snipt.net/embed/fa4afa99fa0285ef33133a8d7b11de08"></script>
-                <div class="row">
-                        <div class="seven columns">
-                            <fieldset>
-                                <h5>Fieldset Header H2</h5>
-                                <p>This is a paragraph within a fieldset.</p>
-                                <?php echo $form->textFieldRow($model, "field14"); ?>    
-                            </fieldset>
-                        </div>
+                <div class="ten mobile-three columns">
+                  <input type="text" />
                 </div>
-                <script type="text/javascript" src="http://snipt.net/embed/64855dca10e703b8a2d9a7819e3c8d4d"></script>
-                
-                <?php $this->endWidget(); ?>
+              </div>
+            </div>
+          </div>
+          <script src="https://gist.github.com/2954955.js?file=f3-prefix-form.html"></script>
 
-                <hr />
+          <p><strong>Note:</strong> for these prefix and postfix labels we're using the <a href="grid.php">mobile grid</a> to size our labels correctly on small devices.</p>
 
-                <h4>Nice Forms</h4>
-                
-                 <?php 
-                /**
-                 * @var FounActiveForm
-                 */
-                $form=$this->beginWidget('foundation.widgets.FounActiveForm', array(
-                    'id'=>'form-nice',
-                    'type'=>'nice',
-                )); ?>
-                <p>Changing the form style to a slightly fancier version is dead simple - set the FounActiveForm type attribute to 'nice'.</p>
-                <script type="text/javascript" src="http://snipt.net/embed/70ebd5e16758191069f88d237c311733"></script>
-                <?php echo $form->textFieldRow($model, "field15"); ?>    
-                <?php echo $form->textFieldRow($model, "field16", array("placeholder" => "Inline label", 'labelHtmlOptions' => array("label" => false))); ?>
-                <?php echo $form->textFieldRow($model, "field17", array("class" => "small")); ?>    
-                <?php echo $form->textFieldRow($model, "field18", array("class" => "medium")); ?>    
-                <?php echo $form->textFieldRow($model, "field19", array("class" => "large")); ?>    
-                <?php echo $form->textFieldRow($model, "field20", array("class" => "expand")); ?>    
-                <?php echo $form->textFieldRow($model, "field21", array("class" => "oversize")); ?>    
-                <?php echo $form->textAreaRow($model, "field22"); ?>    
-                <?php echo $form->textAreaRow($model, "field23", array("placeholder" => "This is a text area")); ?>    
-                <?php echo $form->checkboxRow($model, "field24"); ?>    
-                <?php echo $form->radioButtonRow($model, "field25"); ?>
-                <?php echo $form->dropDownListRow($model, "field26", array("1" => "This is a dropdown", "2" => "This is another option", "3" => "Look, a third option")); ?>
-                <div class="row">
-                        <div class="seven columns">
-                            <fieldset>
-                                <h5>Fieldset Header H2</h5>
-                                <p>This is a paragraph within a fieldset.</p>
-                                <?php echo $form->textFieldRow($model, "field1"); ?>    
-                            </fieldset>
-                        </div>
+          <label>Input with a postfix label</label>
+          <div class="row">
+            <div class="five columns">
+              <div class="row collapse">
+                <div class="nine mobile-three columns">
+                  <input type="text" />
+                </div>
+                <div class="three mobile-one columns">
+                  <span class="postfix">.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script src="https://gist.github.com/2954957.js?file=f3-form-postfix.html"></script>
+
+          <label>Input with a postfix action (button)</label>
+          <div class="row">
+            <div class="five columns">
+              <div class="row collapse">
+                <div class="eight mobile-three columns">
+                  <input type="text" />
+                </div>
+                <div class="four mobile-one columns">
+                  <a class="button postfix">Search</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script src="https://gist.github.com/2954957.js?file=f3-form-postfix.html"></script>
+
+          <hr />
+          
+          <h4>Error States</h4>
+          <p>Foundation includes error states for labels, inputs and messaging that you can have your app generate programatically. You can attach a class of <code>.error</code> either to the individual elements (label, input, small) or to a container column or div.</p>
+          
+          <div class="row">
+            <div class="five columns">
+              <label class="error">Field with Error</label>
+              <input type="text" class="error" />
+              <small class="error">Invalid entry</small>
+            </div>
+            
+            <div class="five columns end error">
+              <label>Another Error</label>
+              <input type="text" />
+              <small>Invalid entry</small>
+            </div>
+          </div>
+          
+          <script src="https://gist.github.com/3061004.js?file=f3-form-errors.html"></script>
+          
+          <hr />
+
+          <form>
+            <fieldset>
+              <legend>Large Form Example</legend>
+
+              <div class="row">
+                <div class="five columns">
+
+                  <label>Name</label>
+                  <input type="text" />
+
+                  <label>Occupation</label>
+                  <input type="text" />
+
+                  <label>Twitter</label>
+                  <div class="row collapse">
+                    <div class="two mobile-one columns">
+                      <span class="prefix">@</span>
+                    </div>
+                    <div class="ten mobile-three columns">
+                      <input type="text" placeholder="foundationzurb" />
+                    </div>
+                  </div>
+
+                  <label>URL</label>
+                  <div class="row collapse">
+                    <div class="nine mobile-three columns">
+                      <input type="text" placeholder="foundation.zurb" />
+                    </div>
+                    <div class="three mobile-one columns">
+                      <span class="postfix">.com</span>
+                    </div>
+                  </div>
+
                 </div>
                 
-                <?php $this->endWidget(); ?>
-                <hr />
+                <div class="five columns">
+                  
+                  <label class="error">Field with Error</label>
+                  <input type="text" class="error" />
+                  <small class="error">Invalid entry</small>
+                  
+                  <div class="error">
+                    <label>Another Error</label>
+                    <input type="text" />
+                    <small>Invalid entry</small>
+                  </div>
+                  
+                </div>
+              </div>
 
-                <h3>Custom Forms</h3>   
-                
-                 
-                <?php 
-                /**
-                 * @var FounActiveForm
-                 */
-                $form=$this->beginWidget('foundation.widgets.FounActiveForm', array(
-                    'id'=>'form-custom',
-                    'type'=>'custom',
-                )); ?>
-                    <p>Creating easy to style custom form elements is so crazy easy, it's practically a crime. Just set the FounActiveForm type attribute to 'custom', if you want, forms.jquery.js will do everything for you.</p>
-                    <script type="text/javascript" src="http://snipt.net/embed/abb88a265dbea6c461aaf98d5fd9b7db"></script>
+              <label>Address</label>
+              <input type="text" placeholder="Street (e.g. 123 Awesome St.)" />
+
+              <div class="row">
+                <div class="six columns">
+                  <input type="text" placeholder="City" />
+                </div>
+                <div class="two columns" />
+                  <select>
+                    <option>CA</option>
+                  </select>
+                </div>
+                <div class="four columns">
+                  <input type="text" placeholder="ZIP" />
+                </div>
+              </div>
+
+            </fieldset>
+          </form>
+
+          <p><a href="https://raw.github.com/gist/2955059/5867e7a3be221ea795155c02af91d423429eb692/f3-form-example.html" target="_blank">View the code for this form &rarr;</a></p>
+
+          <hr />
+
+          <h4>Custom Inputs</h4>
+          <form class="custom">
+                    <p>Creating easy to style custom form elements is so crazy easy, it's practically a crime. Just add a class of "custom" to a form and, if you want, jquery.customforms.js will do everything for you.</p>
                     <p>The Foundation forms js will look for any checkbox, radio button, or select element and replace it with custom markup that is already styled with forms.css.</p>
-                    
-                    <p>Foundation custom forms will even correctly respect and apply default states for radio, checkbox and select elements. You can use the 'checked' or 'selected' properties just like normal, and the js will apply that as soon as the page loads.</p>
-                    
-                    <h5>Radio Buttons</h5>
-                    <p>
-                        <script type="text/javascript" src="http://snipt.net/embed/296cd30848b462ab5a099d25481711a6"></script>
-                        <script type="text/javascript" src="http://snipt.net/embed/8fcb1d67179ebc3e79b873419be04bf2"></script>
-                    </p>
-                    
-                    <h5>Checkboxes</h5>
-                    <p>
-                        <script type="text/javascript" src="http://snipt.net/embed/f586a30b00e8b764b3e85be227c709b8"></script>
-                        <script type="text/javascript" src="http://snipt.net/embed/01d86277dee91bab34dd1baed52d2c18"></script>
-                    </p>
-    
+
+                    <script src="https://gist.github.com/2955124.js?file=f3-custom-form.html"></script>
+
+                    <p>If you want to avoid a potential flash (waiting for js to load and replace your default elements) you can supply the custom markup as part of the page, and the js will instead simply map the custom elements to the inputs.</p>
+                    <p>Foundation custom forms will even correctly respect and apply default states for radio, checkbox and select elements. You can use the "checked" or "selected" properties just like normal, and the js will apply that as soon as the page loads.</p>
+
+                    <h5>Radio Buttons and Checkboxes</h5>
                     <div class="row">
                         <div class="four columns">
-                            <?php echo $form->radioButtonListRow($model, "field28", array(
-                                "1" => "Radio Button 1",
-                                "2" => "Radio Button 2",
-                                "3" => "Radio Button 3",
-                            ), array('labelHtmlOptions' => array("label" => false))); ?>
+                            <label for="radio1"><input name="radio1" type="radio" id="radio1" style="display:none;"><span class="custom radio"></span> Radio Button 1</label>
+                            <label for="radio2"><input name="radio1" type="radio" id="radio2" style="display:none;"><span class="custom radio checked"></span> Radio Button 2</label>
+                            <label for="radio3"><input name="radio1" type="radio" id="radio3" disabled style="display:none;"><span class="custom radio"></span> Radio Button 3</label>
                         </div>
                         <div class="four columns">
-                            <?php echo $form->radioButtonListRow($model, "field29", array(
-                                "1" => "Radio Button 1",
-                                "2" => "Radio Button 2",
-                                "3" => "Radio Button 3",
-                             ), array('labelHtmlOptions' => array("label" => false))); ?>
+                            <label for="radio4"><input name="radio2" type="radio" id="radio4"> Radio Button 1</label>
+                            <label for="radio5"><input name="radio2" CHECKED type="radio" id="radio5"> Radio Button 2</label>
+                            <label for="radio6"><input name="radio2" type="radio" id="radio6"> Radio Button 3</label>
                         </div>
                         <div class="four columns">
-                            <?php echo $form->checkBoxListRow($model, "field30", array(
-                                "1" => "Label for Checkbox",
-                                "2" => "Label for Checkbox",
-                                "3" => "Label for Checkbox",
-                             ), array('labelHtmlOptions' => array("label" => false))); ?>
+                            <label for="checkbox1"><input type="checkbox" id="checkbox1" style="display: none;"><span class="custom checkbox"></span> Label for Checkbox</label>
+                            <label for="checkbox2"><input type="checkbox" id="checkbox2" checked style="display: none;"><span class="custom checkbox checked"></span> Label for Checkbox</label>
+                            <label for="checkbox3"><input type="checkbox" CHECKED id="checkbox3"> Label for Checkbox</label>
                         </div>
                     </div>
-    
+
+                    <br /><br />
+
+                    <script src="https://gist.github.com/2955081.js?file=f3-custom-radio.html"></script>
+                    <script src="https://gist.github.com/2955092.js?file=f3-custom-checkbox.html"></script>
+
+                    <br />
                     <h5>Dropdown / Select Elements</h5>
-                    <p>
-                        <script type="text/javascript" src="http://snipt.net/embed/cb01f69f04e0254a0d643dc45b1b4097"></script>
-                        <script type="text/javascript" src="http://snipt.net/embed/bb153a86cba41617b41d91268828bb42"></script>
-                    </p>
-                    
-                    <?php echo $form->dropDownListRow($model, "field31", array(
-                        "1" => "This is a dropdown", 
-                        "2" => "This is another option", 
-                        "3" => "Look, a third option"
-                    )); ?>
-                    <?php echo $form->dropDownListRow($model, "field32", array("1" => "This is a dropdown", "2" => "This is another option", "3" => "Look, a third option")); ?>
-               <?php $this->endWidget(); ?>
-                
+
+                    <label for="customDropdown">Dropdown Label</label>
+                    <select style="display:none;" id="customDropdown">
+                        <option SELECTED>This is a dropdown</option>
+                        <option>This is another option</option>
+                        <option>Look, a third option</option>
+                    </select>
+                    <div class="custom dropdown">
+                        <a href="#" class="current">
+                            This is a dropdown
+                        </a>
+                        <a href="#" class="selector"></a>
+                        <ul>
+                            <li>This is a dropdown</li>
+                            <li>This is another option</li>
+                            <li>Look, a third option</li>
+                        </ul>
+                    </div>
+
+                    <label for="customDropdown2">Dropdown Label</label>
+                    <select id="customDropdown2">
+                        <option>This is a dropdown</option>
+                        <option SELECTED>This is another option</option>
+                        <option>Look, a third option</option>
+                    </select>
+
+                  <script src="https://gist.github.com/2955100.js?file=f3-custom-dropdowns.html"></script>
+
+                </form>
+
                 <h5>Adding Custom Forms with JavaScript</h5>
 
                 <p>If you are creating these custom forms using JavaScript (via AJAX, JavaScript templates or whatever), you will also need to create the custom markup that Foundation typically creates for you.</p>
 
-                <p>Foundation detects any custom forms when the document has loaded and adds the custom markup required to make the forms pretty. However if you are adding these forms after the document has loaded, Foundation does not know to append this markup.</p>
+                <p>Foundation detects any custom forms when the document has loaded and adds the custom markup required to make the forms pretty. However, if you are adding these forms after the document has loaded, Foundation does not know to append this markup.</p>
 
                 <p>All the custom forms events are bound using jQuery.fn.on(), so you don't need to worry about event handlers not being bound to new elements.</p>
-                

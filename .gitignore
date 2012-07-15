@@ -31,6 +31,10 @@ assets/**/*
 protected/runtime/**
 protected/runtime/**/*
 
+# SublimeText project files
+/*.sublime-project
+*.sublime-workspace
+
 fabfile.pyc
 fabfile.py
 

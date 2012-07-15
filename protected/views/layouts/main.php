@@ -64,7 +64,7 @@
   <div class="container top-bar home-border">
     <div class="attached">
       <div class="name">
-        <span><a href="http://foundation.zurb.com">Foundation</a></span>
+        <span><a href="http://foundation.oakwebdev.com">Yii Foundation 3</a></span>
       </div>
         <ul class="right">
             <li class="show-for-small">
