@@ -50,7 +50,7 @@ class SimpleForm extends CFormModel
 	{
 		return array(
 			// username and password are required
-			array('field8, field18', 'required', 'message' => 'Whoa, cowboy. Try that again.'),
+			array('field12, field13, field18, field19', 'required', 'message' => 'Invalid entry'),
 		);
 	}
 
@@ -72,28 +72,30 @@ class SimpleForm extends CFormModel
 			'field6'=>'This is a label.',
 			'field7'=>'Address',
 			'field8'=>'',
-			'field9'=>'Textarea',
-			'field10'=>'Inline Label Textarea',
-			'field11'=>'Label for Checkbox',
-			'field12'=>'Label for Radio',
-			'field13'=>'Dropdown Label',
-			'field14'=>'Standar Input',
-			//Nice
-			'field15'=>'Standard Input',
-			'field16'=>'',
-			'field17'=>'Small Input',
-			'field18'=>'Medium Input (with wrapper)',
-			'field19'=>'Large Input',
-            'field20'=>'Expanded (Full Width) Input',
-            'field21'=>'Oversize Input',
-            'field22'=>'Textarea',
-            'field23'=>'Inline Label Textarea',
+			'field9'=>'Input with a prefix character',
+			'field10'=>'Input with a postfix label',
+			'field11'=>'Input with a postfix action (button)',
+			'field12'=>'Field with Error',
+			'field13'=>'Another Error',
+			//Large form
+			'field14'=>'Name',
+			'field15'=>'Occupation',
+			'field16'=>'Twitter',
+			'field17'=>'URL',
+			'field18'=>'Field with Error',
+			'field19'=>'Another Error',
+            'field20'=>'Address',
+            'field21'=>'',
+            'field22'=>'',
+            'field23'=>'',
+
+            //Custom
             'field24'=>'Label for Checkbox',
             'field25'=>'Label for Radio',
             'field26'=>'Dropdown Label',
-            'field27'=>'Standar Input',
+            'field27'=>'Dropdown Label',
+            'field28'=>'Dropdown Label',
             //Custom
-            'field28'=>'',
             'field29'=>'',
             'field30'=>'',
             'field31'=>'Dropdown Label',

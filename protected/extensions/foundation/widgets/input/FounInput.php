@@ -23,6 +23,19 @@ class FounInput extends CInputWidget {
     const TYPE_FILE = 'filefield';
     const TYPE_CAPTCHA = 'captcha';
 
+    private $_columns = array(
+        1 => 'one',
+        2 => 'two',
+        3 => 'three',
+        4 => 'four',
+        5 => 'five',
+        6 => 'six',
+        7 => 'seven',
+        8 => 'eight',
+        9 => 'nine',
+        10 => 'ten',
+        11 => 'eleven',
+    );
     /**
      * @var FounActiveForm the associated form widget.
      */
@@ -41,6 +54,9 @@ class FounInput extends CInputWidget {
     public $data = array( );
 
     public $labelHtmlOptions = array( );
+
+    private $_addon = false;
+    private $_size = 12;
 
     /**
      * Initializes the widget.
@@ -79,7 +95,7 @@ class FounInput extends CInputWidget {
      */
     protected function field( $field ) {
         if( $hasError = $this->model->hasErrors( $this->attribute ) ) {
-            echo '<div class="form-field error">';
+            echo '<div class="error">';
         }
         echo $this->getLabel( $this->labelHtmlOptions );
         echo $field;
@@ -94,8 +110,110 @@ class FounInput extends CInputWidget {
      * @return string the rendered content
      */
     protected function textfield( ) {
-        $this->field( $this->form->textField( $this->model, $this->attribute, $this->htmlOptions ) );
+
+        $input = $prefix = $postfix = '';
+
+        //The text input
+
+        if( $this->hasAddOn() ){
+            $input .= '<div class="row collapse">';
+            $input .= $prefix = $this->getPrefix();
+            $postfix = $this->getPostfix();
+            $size = $this->_columns[$this->_size];
+            if($prefix != "" && $postfix != ""){
+                $input .= '<div class="'.$size.' columns mobile-two">';
+            }else {
+                $input .= '<div class="'.$size.' columns mobile-three">';
+            }
+            $input .= $this->form->textField( $this->model, $this->attribute, $this->htmlOptions );
+            $input .= '</div>';
+            $input .= $postfix;
+        }else{
+            $input = $this->form->textField( $this->model, $this->attribute, $this->htmlOptions );
+        }
+
+
+        if($this->hasAddOn()){
+            $input .= '</div>';
+        }
+
+        $this->field( $input );
     }
+
+    /**
+     * Returns the prefix element for the input.
+     * @return string the element
+     */
+    protected function getPrefix() {
+        ob_start();
+        if (isset($this->htmlOptions['prefix'])) {
+
+            $this->_addon = true;
+
+            if (isset($this->htmlOptions['prefixOptions'])) {
+                $prefixOptions = $this->htmlOptions['prefixOptions'];
+                unset($this->htmlOptions['prefixOptions']);
+            } else {
+                $prefixOptions = array('size' => 2, 'type' => 'text');
+            }
+
+            $htmlOptions = array('class' => 'prefix' );
+            $size = $this->_columns[$prefixOptions['size']];
+            $this->_size -= $prefixOptions['size'];
+
+            echo '<div class="'.$size.' columns mobile-one">';
+            if(isset($prefixOptions['type']) && $prefixOptions['type'] == 'raw'){
+                echo $this->htmlOptions['prefix'];
+            }else{
+                echo CHtml::tag('span', $htmlOptions, $this->htmlOptions['prefix']);
+            }
+            unset($this->htmlOptions['prefix']);
+            echo '</div>';
+        }
+        return ob_get_clean();
+    }
+
+    /**
+     * Returns the postfix element for the input.
+     * @return string the element
+     */
+    protected function getPostfix() {
+        ob_start();
+        if (isset($this->htmlOptions['postfix'])) {
+
+            $this->_addon = true;
+
+            if (isset($this->htmlOptions['postfixOptions'])) {
+                $postfixOptions = $this->htmlOptions['postfixOptions'];
+                unset($this->htmlOptions['postfixOptions']);
+            } else {
+                $postfixOptions = array('size' => 2, 'type' => 'text');
+            }
+
+            $htmlOptions = array('class' => 'postfix' );
+            $size = $this->_columns[$postfixOptions['size']];
+            $this->_size -= $postfixOptions['size'];
+
+            echo '<div class="'.$size.' columns mobile-one">';
+            if(isset($postfixOptions['type']) && $postfixOptions['type'] == 'raw'){
+                echo $this->htmlOptions['postfix'];
+            }else{
+                echo CHtml::tag('span', $htmlOptions, $this->htmlOptions['postfix']);
+            }
+            unset($this->htmlOptions['postfix']);
+            echo '</div>';
+        }
+        return ob_get_clean();
+    }
+
+    /**
+     * Returns whether the input has an add-on (prefix and/or postfix).
+     * @return boolean the result
+     */
+    protected function hasAddOn() {
+            return $this->_addon || isset($this->htmlOptions['prefix']) || isset($this->htmlOptions['postfix']);
+    }
+
 
     /**
      * Renders a password field.
@@ -247,7 +365,9 @@ class FounInput extends CInputWidget {
     protected function getLabel( $htmlOptions = array() ) {
         if( !in_array( $this->type, array(
                 'checkbox',
-                'radio'
+                'radio',
+                'radioButtonList',
+                'checkBoxList'
             ) ) && $this->hasModel( ) )
             return $this->form->labelEx( $this->model, $this->attribute, $htmlOptions );
         else

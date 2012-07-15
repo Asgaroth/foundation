@@ -36,14 +36,13 @@ class SiteController extends Controller
     
 	public function actionForms(){
 	    $model = new SimpleForm;
-        $model->field9 = "This is a textarea";
-        $model->field22 = "This is a textarea";
-        $model->field29 = 2;
-        $model->field30 = array(2, 3);
-        $model->field31 = 1;
-        $model->field32 = 2;
+	    $model->field25 = "2";
+	    $model->field26 = array("2", '3');
+	    $model->field27 = "1";
+	    $model->field28 = "2";
         $model->validate();
-	    $this->render('forms', compact('model'));	}
+	    $this->render('forms', compact('model'));
+	}
     
 	public function actionLayout(){
 	    $this->render('layout');

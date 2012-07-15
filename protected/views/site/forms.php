@@ -97,222 +97,160 @@ $form=$this->beginWidget('foundation.widgets.FounActiveForm'); ?>
 
 
 <h4>Labels and Actions with Collapsed Columns</h4>
-          <p>Foundation forms support actions tied to buttons, and prefix / postfix labels, through a versatile approach using special grid properties. Essentially you can use a 'collapsed' row to create label / action / input combinations. Here are a few examples.</p>
+<p>Foundation forms support actions tied to buttons, and prefix / postfix labels, through a versatile approach using special grid properties.
+ Essentially you can use a 'collapsed' row to create label / action / input combinations. Here are a few examples.</p>
 
-          <label>Input with a prefix character</label>
-          <div class="row">
-            <div class="four columns">
-              <div class="row collapse">
-                <div class="two mobile-one columns">
-                  <span class="prefix">#</span>
-                </div>
-                <div class="ten mobile-three columns">
-                  <input type="text" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <script src="https://gist.github.com/2954955.js?file=f3-prefix-form.html"></script>
+<?php $form=$this->beginWidget('foundation.widgets.FounActiveForm'); ?>
+<div class="row">
+  <div class="four columns">
+        <?php echo $form->textFieldRow($model, "field9", array('prefix' => '#')); ?>    
+  </div>
+</div>
+<?php $this->endWidget(); ?>
+<script src="https://gist.github.com/3118412.js"> </script>
 
           <p><strong>Note:</strong> for these prefix and postfix labels we're using the <a href="grid.php">mobile grid</a> to size our labels correctly on small devices.</p>
 
-          <label>Input with a postfix label</label>
-          <div class="row">
-            <div class="five columns">
-              <div class="row collapse">
-                <div class="nine mobile-three columns">
-                  <input type="text" />
-                </div>
-                <div class="three mobile-one columns">
-                  <span class="postfix">.com</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <script src="https://gist.github.com/2954957.js?file=f3-form-postfix.html"></script>
+<?php $form=$this->beginWidget('foundation.widgets.FounActiveForm'); ?>
+<div class="row">
+  <div class="five columns">
+        <?php echo $form->textFieldRow($model, "field10", array('postfix' => '.com', 
+        'postfixOptions' => array(
+              'size' => 3,
+        ))); ?>    
+  </div>
+</div>
+<?php $this->endWidget(); ?>
+<script src="https://gist.github.com/3118443.js"> </script>
 
-          <label>Input with a postfix action (button)</label>
-          <div class="row">
-            <div class="five columns">
-              <div class="row collapse">
-                <div class="eight mobile-three columns">
-                  <input type="text" />
-                </div>
-                <div class="four mobile-one columns">
-                  <a class="button postfix">Search</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <script src="https://gist.github.com/2954957.js?file=f3-form-postfix.html"></script>
 
-          <hr />
+<?php $form=$this->beginWidget('foundation.widgets.FounActiveForm'); ?>
+<div class="row">
+  <div class="five columns">
+        <?php echo $form->textFieldRow($model, "field11", array(
+          'postfix' => '<a href="#" class="postfix button">Search</a>', 
+          'postfixOptions' => array(
+              'size' => 4,
+              'type' => 'raw'
+        ))); ?>    
+  </div>
+</div>
+<?php $this->endWidget(); ?>
+
+<script src="https://gist.github.com/3118721.js"> </script>
+
+<hr />
           
-          <h4>Error States</h4>
-          <p>Foundation includes error states for labels, inputs and messaging that you can have your app generate programatically. You can attach a class of <code>.error</code> either to the individual elements (label, input, small) or to a container column or div.</p>
-          
-          <div class="row">
-            <div class="five columns">
-              <label class="error">Field with Error</label>
-              <input type="text" class="error" />
-              <small class="error">Invalid entry</small>
-            </div>
-            
-            <div class="five columns end error">
-              <label>Another Error</label>
-              <input type="text" />
-              <small>Invalid entry</small>
-            </div>
-          </div>
-          
-          <script src="https://gist.github.com/3061004.js?file=f3-form-errors.html"></script>
-          
-          <hr />
+<h4>Error States</h4>
+<p>Foundation includes error states for labels, inputs and messaging that you can have your app generate programatically.
+ You can attach a class of <code>.error</code> either to the individual elements (label, input, small) or to a container column or div.</p>
+ 
+<?php $form=$this->beginWidget('foundation.widgets.FounActiveForm'); ?>
+<div class="row">
+  <div class="five columns">
+    <?php echo $form->textFieldRow($model, "field12"); ?>
+  </div>
+  <div class="five columns end">
+    <?php echo $form->textFieldRow($model, "field13"); ?>
+  </div>
+</div>
+<?php $this->endWidget(); ?>
+<script src="https://gist.github.com/3118741.js"> </script>
+<hr />
 
-          <form>
-            <fieldset>
-              <legend>Large Form Example</legend>
+<?php $form=$this->beginWidget('foundation.widgets.FounActiveForm'); ?>
+<fieldset>
+  <legend>Large Form Example</legend>
+  <div class="row">
+    <div class="five columns">
+      <?php echo $form->textFieldRow($model, "field14"); ?>
+      <?php echo $form->textFieldRow($model, "field15"); ?>
+      <?php echo $form->textFieldRow($model, "field16", array('prefix' => '@', 'placeholder' => 'asgarothbelem')); ?>    
+      <?php echo $form->textFieldRow($model, "field17", array(
+        'postfix' => '.com', 
+        'postfixOptions' => array('size' => 3), 
+        'placeholder' => 'foundation.oakwebdev')); ?>    
+    </div>
+    <div class="five columns">
+      <?php echo $form->textFieldRow($model, "field18"); ?>
+      <?php echo $form->textFieldRow($model, "field19"); ?>
+    </div>
+  </div>
+  <?php echo $form->textFieldRow($model, "field20", array('placeholder'=>"Street (e.g. 123 Awesome St.)")); ?>
+  <div class="row">
+    <div class="six columns">
+      <?php echo $form->textField( $model, "field21", array("placeholder" => "City")); ?>
+    </div>
+    <div class="two columns">
+      <?php echo $form->dropdownlist( $model, "field22", array("CA" => "CA")); ?>
+    </div>
+    <div class="four columns">
+      <?php echo $form->textField( $model, "field23", array("placeholder" => "ZIP")); ?>
+    </div>
+  </div>
+</fieldset>
+<?php $this->endWidget(); ?>
+<p><a href="https://gist.github.com/3118835" target="_blank">View the code for this form &rarr;</a></p>
+<hr />
 
-              <div class="row">
-                <div class="five columns">
+<h4>Custom Inputs</h4>
+<?php $form=$this->beginWidget('foundation.widgets.FounActiveForm', array("type" => 'custom')); ?>
+  <p>Creating easy to style custom form elements is so crazy easy, it's practically a crime. Just add a type of "custom" to a form and, if you want, jquery.customforms.js will do everything for you.</p>
+  <p>The Foundation forms js will look for any checkbox, radio button, or select element and replace it with custom markup that is already styled with forms.css.</p>
+  <script src="https://gist.github.com/3118850.js"> </script>
 
-                  <label>Name</label>
-                  <input type="text" />
+  <p>If you want to avoid a potential flash (waiting for js to load and replace your default elements) you can supply the custom markup as part of the page, and the js will instead simply map the custom elements to the inputs.</p>
+  <p>Foundation custom forms will even correctly respect and apply default states for radio, checkbox and select elements. You can use the "checked" or "selected" properties just like normal, and the js will apply that as soon as the page loads.</p>
 
-                  <label>Occupation</label>
-                  <input type="text" />
+<h5>Radio Buttons and Checkboxes</h5>
+<div class="row">
+    <div class="four columns">
+      <?php echo $form->radioButtonListRow( $model, "field24", array(
+        "1" => ' Radio Button 1',
+        "2" => ' Radio Button 2',
+        "3" => ' Radio Button 3',
+      )); ?>
+    </div>
+    <div class="four columns">
+      <?php echo $form->radioButtonListRow( $model, "field25", array(
+        "1" => ' Radio Button 1',
+        "2" => ' Radio Button 2',
+        "3" => ' Radio Button 3',
+      )); ?>
+    </div>
+    <div class="four columns">
+      <?php echo $form->checkBoxListRow( $model, "field26", array(
+        "1" => ' Label for Checkbox',
+        "2" => ' Label for Checkbox',
+        "3" => ' Label for Checkbox',
+      )); ?>
+    </div>
+</div>
+<br /><br />
+<script src="https://gist.github.com/3118889.js"> </script>
+<br />
+<h5>Dropdown / Select Elements</h5>
 
-                  <label>Twitter</label>
-                  <div class="row collapse">
-                    <div class="two mobile-one columns">
-                      <span class="prefix">@</span>
-                    </div>
-                    <div class="ten mobile-three columns">
-                      <input type="text" placeholder="foundationzurb" />
-                    </div>
-                  </div>
+<?php echo $form->dropdownlistRow( $model, "field27", array(
+  "1" => "This is a dropdown",
+  "2" => "This is another option",
+  "3" => "Look, a third option",
+)); ?>
 
-                  <label>URL</label>
-                  <div class="row collapse">
-                    <div class="nine mobile-three columns">
-                      <input type="text" placeholder="foundation.zurb" />
-                    </div>
-                    <div class="three mobile-one columns">
-                      <span class="postfix">.com</span>
-                    </div>
-                  </div>
+<?php echo $form->dropdownlistRow( $model, "field28", array(
+  "1" => "This is a dropdown",
+  "2" => "This is another option",
+  "3" => "Look, a third option",
+)); ?>
 
-                </div>
-                
-                <div class="five columns">
-                  
-                  <label class="error">Field with Error</label>
-                  <input type="text" class="error" />
-                  <small class="error">Invalid entry</small>
-                  
-                  <div class="error">
-                    <label>Another Error</label>
-                    <input type="text" />
-                    <small>Invalid entry</small>
-                  </div>
-                  
-                </div>
-              </div>
+<?php $this->endWidget(); ?>
 
-              <label>Address</label>
-              <input type="text" placeholder="Street (e.g. 123 Awesome St.)" />
+<script src="https://gist.github.com/3118907.js"> </script>
 
-              <div class="row">
-                <div class="six columns">
-                  <input type="text" placeholder="City" />
-                </div>
-                <div class="two columns" />
-                  <select>
-                    <option>CA</option>
-                  </select>
-                </div>
-                <div class="four columns">
-                  <input type="text" placeholder="ZIP" />
-                </div>
-              </div>
+<h5>Adding Custom Forms with JavaScript</h5>
 
-            </fieldset>
-          </form>
+<p>If you are creating these custom forms using JavaScript (via AJAX, JavaScript templates or whatever), you will also need to create the custom markup that Foundation typically creates for you.</p>
 
-          <p><a href="https://raw.github.com/gist/2955059/5867e7a3be221ea795155c02af91d423429eb692/f3-form-example.html" target="_blank">View the code for this form &rarr;</a></p>
+<p>Foundation detects any custom forms when the document has loaded and adds the custom markup required to make the forms pretty. However, if you are adding these forms after the document has loaded, Foundation does not know to append this markup.</p>
 
-          <hr />
-
-          <h4>Custom Inputs</h4>
-          <form class="custom">
-                    <p>Creating easy to style custom form elements is so crazy easy, it's practically a crime. Just add a class of "custom" to a form and, if you want, jquery.customforms.js will do everything for you.</p>
-                    <p>The Foundation forms js will look for any checkbox, radio button, or select element and replace it with custom markup that is already styled with forms.css.</p>
-
-                    <script src="https://gist.github.com/2955124.js?file=f3-custom-form.html"></script>
-
-                    <p>If you want to avoid a potential flash (waiting for js to load and replace your default elements) you can supply the custom markup as part of the page, and the js will instead simply map the custom elements to the inputs.</p>
-                    <p>Foundation custom forms will even correctly respect and apply default states for radio, checkbox and select elements. You can use the "checked" or "selected" properties just like normal, and the js will apply that as soon as the page loads.</p>
-
-                    <h5>Radio Buttons and Checkboxes</h5>
-                    <div class="row">
-                        <div class="four columns">
-                            <label for="radio1"><input name="radio1" type="radio" id="radio1" style="display:none;"><span class="custom radio"></span> Radio Button 1</label>
-                            <label for="radio2"><input name="radio1" type="radio" id="radio2" style="display:none;"><span class="custom radio checked"></span> Radio Button 2</label>
-                            <label for="radio3"><input name="radio1" type="radio" id="radio3" disabled style="display:none;"><span class="custom radio"></span> Radio Button 3</label>
-                        </div>
-                        <div class="four columns">
-                            <label for="radio4"><input name="radio2" type="radio" id="radio4"> Radio Button 1</label>
-                            <label for="radio5"><input name="radio2" CHECKED type="radio" id="radio5"> Radio Button 2</label>
-                            <label for="radio6"><input name="radio2" type="radio" id="radio6"> Radio Button 3</label>
-                        </div>
-                        <div class="four columns">
-                            <label for="checkbox1"><input type="checkbox" id="checkbox1" style="display: none;"><span class="custom checkbox"></span> Label for Checkbox</label>
-                            <label for="checkbox2"><input type="checkbox" id="checkbox2" checked style="display: none;"><span class="custom checkbox checked"></span> Label for Checkbox</label>
-                            <label for="checkbox3"><input type="checkbox" CHECKED id="checkbox3"> Label for Checkbox</label>
-                        </div>
-                    </div>
-
-                    <br /><br />
-
-                    <script src="https://gist.github.com/2955081.js?file=f3-custom-radio.html"></script>
-                    <script src="https://gist.github.com/2955092.js?file=f3-custom-checkbox.html"></script>
-
-                    <br />
-                    <h5>Dropdown / Select Elements</h5>
-
-                    <label for="customDropdown">Dropdown Label</label>
-                    <select style="display:none;" id="customDropdown">
-                        <option SELECTED>This is a dropdown</option>
-                        <option>This is another option</option>
-                        <option>Look, a third option</option>
-                    </select>
-                    <div class="custom dropdown">
-                        <a href="#" class="current">
-                            This is a dropdown
-                        </a>
-                        <a href="#" class="selector"></a>
-                        <ul>
-                            <li>This is a dropdown</li>
-                            <li>This is another option</li>
-                            <li>Look, a third option</li>
-                        </ul>
-                    </div>
-
-                    <label for="customDropdown2">Dropdown Label</label>
-                    <select id="customDropdown2">
-                        <option>This is a dropdown</option>
-                        <option SELECTED>This is another option</option>
-                        <option>Look, a third option</option>
-                    </select>
-
-                  <script src="https://gist.github.com/2955100.js?file=f3-custom-dropdowns.html"></script>
-
-                </form>
-
-                <h5>Adding Custom Forms with JavaScript</h5>
-
-                <p>If you are creating these custom forms using JavaScript (via AJAX, JavaScript templates or whatever), you will also need to create the custom markup that Foundation typically creates for you.</p>
-
-                <p>Foundation detects any custom forms when the document has loaded and adds the custom markup required to make the forms pretty. However, if you are adding these forms after the document has loaded, Foundation does not know to append this markup.</p>
-
-                <p>All the custom forms events are bound using jQuery.fn.on(), so you don't need to worry about event handlers not being bound to new elements.</p>
+<p>All the custom forms events are bound using jQuery.fn.on(), so you don't need to worry about event handlers not being bound to new elements.</p>
