@@ -33,19 +33,15 @@ Foundation is an easy to use, powerful, and flexible framework for building prot
 
 ##Resources
  * [Forum Discussion](http://www.yiiframework.com/forum/index.php/topic/30716-extension-foundation/ "Forum Discussion") : for any questions or community support
- * [Project page](https://github.com/Asgaroth/foundation "Project page") : to fork and contribute
- * [Demo](http://foundation.oakwebdev.com/ "Demo")
+ * [Github](https://github.com/Asgaroth/foundation "Project page") : to fork and contribute
+ * [Demo](http://foundation3.oakwebdev.com/ "Demo")
  * [Foundation](http://foundation.zurb.com/ "Foundation")
 
 ##Changelog
-###0.0.2 April 15, 2012
- 
- - Added Breadcrumbs and Pagination
 
-###0.0.1 April 10, 2012
+###0.1.3
 
- - Initial Release
-
+-Added form prefix and postfix support
 
 
 
