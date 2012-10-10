@@ -11,9 +11,9 @@ $(window).load(function() {
                 <h4 class="subheader">Orbit is an easy to use, powerful image slider built to be responsive, just like Foundation.</h4>
 
           <div id="featured">
-            <img src="<?php echo Yii::app()->baseUrl; ?>//images/orbit-demo/demo1.jpg" />
-            <img src="<?php echo Yii::app()->baseUrl; ?>//images/orbit-demo/demo2.jpg" />
-            <img src="<?php echo Yii::app()->baseUrl; ?>//images/orbit-demo/demo3.jpg" />
+            <img src="<?php echo Yii::app()->baseUrl; ?>/images/orbit-demo/demo1.jpg" />
+            <img src="<?php echo Yii::app()->baseUrl; ?>/images/orbit-demo/demo2.jpg" />
+            <img src="<?php echo Yii::app()->baseUrl; ?>/images/orbit-demo/demo3.jpg" />
           </div>
 
                 <h4>Getting Started</h4>

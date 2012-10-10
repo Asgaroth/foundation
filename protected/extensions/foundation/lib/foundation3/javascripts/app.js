@@ -12,16 +12,13 @@ jQuery(document).ready(function ($) {
     // Strip off the current url that IE adds
     contentLocation = contentLocation.replace(/^.+#/, '#');
 
-    // Strip off the current url that IE adds
-    contentLocation = contentLocation.replace(/^.+#/, '#');
-
     //Make Tab Active
     $activeTab.removeClass('active');
     $tab.addClass('active');
 
     //Show Tab Content
-    $(contentLocation).closest('.tabs-content').children('li').hide();
-    $(contentLocation).css('display', 'block');
+    $(contentLocation).closest('.tabs-content').children('li').removeClass('active').hide();
+    $(contentLocation).css('display', 'block').addClass('active');
   }
 
   $('dl.tabs dd a').on('click.fndtn', function (event) {
@@ -29,7 +26,7 @@ jQuery(document).ready(function ($) {
   });
 
   if (window.location.hash) {
-    activateTab($('a[href="' + window.location.hash + '"]'));
+    activateTab($('a[href="' + window.location.hash + '"]').parent('dd'));
     $.foundation.customForms.appendCustomMarkup();
   }
 
@@ -82,6 +79,10 @@ jQuery(document).ready(function ($) {
 
   /* DISABLED BUTTONS ------------- */
   /* Gives elements with a class of 'disabled' a return: false; */
+  $('.button.disabled').on('click.fndtn', function (event) {
+    event.preventDefault();
+  });
+  
 
   /* SPLIT BUTTONS/DROPDOWNS */
   $('.button.dropdown > ul').addClass('no-hover');
@@ -95,7 +96,6 @@ jQuery(document).ready(function ($) {
     $(this).siblings('ul').toggleClass('show-dropdown');
   });
   $('.button.dropdown').not('.split').on('click.fndtn touchstart.fndtn', function (e) {
-    e.preventDefault();
     $('.button.dropdown').not(this).children('ul').removeClass('show-dropdown');
     $(this).children('ul').toggleClass('show-dropdown');
   });
@@ -113,5 +113,13 @@ jQuery(document).ready(function ($) {
   $('.button.dropdown.large > ul').css('top', largeButtonHeight);
   $('.button.dropdown.small > ul').css('top', smallButtonHeight);
   $('.button.dropdown.tiny > ul').css('top', tinyButtonHeight);
+  
+  $('.button.dropdown.up:not(.large):not(.small):not(.tiny) > ul').css('top', 'auto').css('bottom', normalButtonHeight - 2);
+  $('.button.dropdown.up.large > ul').css('top', 'auto').css('bottom', largeButtonHeight - 2);
+  $('.button.dropdown.up.small > ul').css('top', 'auto').css('bottom', smallButtonHeight - 2);
+  $('.button.dropdown.up.tiny > ul').css('top', 'auto').css('bottom', tinyButtonHeight - 2);
+
+  /* CUSTOM FORMS */
+  $.foundation.customForms.appendCustomMarkup();
 
 });
