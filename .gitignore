@@ -25,17 +25,6 @@ local.properties
 # PDT-specific
 .buildpath
 
-#Yii specific
-assets/**
-assets/**/*
-protected/runtime/**
-protected/runtime/**/*
-
 # SublimeText project files
 /*.sublime-project
 *.sublime-workspace
-
-fabfile.pyc
-fabfile.py
-
-bootstrap.sh
