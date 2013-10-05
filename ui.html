@@ -31,7 +31,7 @@
 <link rel="stylesheet" type="text/css" href="css/zurb.mega-drop.css" />
 <link rel="stylesheet" type="text/css" href="css/foundation.top-bar.css" />
 <script type="text/javascript" src="assets/444c92ff/jquery.js"></script>
-<title>Yii Foundation 3 : Get Started</title>
+<title>Yii Foundation 3 : Yii Foundation 3 - Ui Site</title>
     <link rel="icon" type="image/ico" href="favicon.ico">
 
     <!-- Included CSS Files -->
@@ -95,7 +95,7 @@
         <h4 class="subheader">Everything you need to know to build for the future.</h4>
 
       <div class="show-for-small menu-action">
-        <a class='sidebar-button small secondary button' id='sidebarButton' href="index.html#sidebar">
+        <a class='sidebar-button small secondary button' id='sidebarButton' href="ui.html#sidebar">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
             <line fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" x1="0" y1="8.907" x2="48" y2="8.907"/>
             <line fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" x1="0" y1="24.173" x2="48" y2="24.173"/>
@@ -111,62 +111,196 @@
         <section role="main">
           <div class="row">
             <div class="eight columns">
-                  			<h3>Welcome to Foundation 3.</h3>
-    			<p>Foundation 3 is built on ZURB's 14 years of experience at building sites and apps for the Web. We believe designing responsively &mdash; designing for all devices and any device &mdash; is the future. Foundation is our way of helping you do that. What changed in Foundation 3? Almost everything. Here's what makes Foundation, Foundation.</p>
 
-    			<div class="row">
-    			  <div class="four columns">
-      			  <h5>Developed with Sass</h5>
-      			  <p>Foundation 3 is built with Sass, a powerful CSS preprocessor, which allows us to much more quickly develop Foundation itself, as well as sites built with it. You can use the Sass or straight CSS version of Foundation.</p>
-    			  </div>
-    			  <div class="four columns">
-      			  <h5>Feature Complete</h5>
-      			  <p>New button elements, new navigation types, new form styles and options, and tons of streamlining make this the fastest way to prototype responsively, and to take that code and go right to production.</p>
-    			  </div>
-    			  <div class="four columns">
-      			  <h5>Freakishly Advanced</h5>
-      			  <p>Foundation is the most advanced front-end Web framework in the world. While the Framework works back all the way to IE8, we're taking advantage of new, awesome Web technology to help you build faster and better.</p>
-    			  </div>
-    			</div>
+    			<h3>Elements</h3>
+    			<h4 class="subheader">Prototyping and production requires more than just navigation or tabs or typography. We've created a number of additional elements to help rapidly prototype, and like everything else they are production-ready and easy to restyle or override.</h4>
 
     			<hr />
 
-    			<h3>Features of Foundation</h3>
-    			<div class="row">
-      			<div class="six columns">
-        			<h4><a href="grid.html">The Grid</a></h4>
-        			<p>Much of the power of Foundation comes from the grid, a 12-column typographic grid designed to work on almost any sized device screen. With support for nesting, source ordering, offsets and small device presentation it almost makes this too easy.</p>
+    			<h4>Visibility Classes</h4>
+  				<p>Foundation 3 allows you to easily turn elements on and off based on certain device criteria, like screen size, touch, or orientation.</p>
 
-        			<h4><a href="typo.html">Typography</a></h4>
-        			<p>The typography in Foundation is based on a golden ratio modular scale, so all of your typgraphic elements look great together. Through the power of Sass, the typography is also easy to change both in the base size and ratio.</p>
+  				<h5>Screen Size</h5>
+  				<p>The following text should describe the device you're using:
+            <strong class="show-for-xlarge">You are on a very large screen.</strong>
+            <strong class="show-for-large">You are on a large screen.</strong>
+            <strong class="show-for-large-up">You are on a large or very large screen.</strong>
+            <strong class="show-for-medium">You are on a medium screen.</strong>
+            <strong class="show-for-medium-down">You are on a medium or small screen.</strong>
+            <strong class="show-for-small">You are on a small screen, like a smartphone.</strong>
+  				</p>
 
-        			<h4><a href="buttons.html">Buttons</a></h4>
-        			<p>Buttons are one of the core interactive elements of the Web. We've included styles and patterns for buttons that make it simple to create everything from simple marketing CTAs to complex application toolbars.</p>
+  				<script src="https://gist.github.com/2993794.js?file=f3-show-size.html"></script>
 
-        		  <h4><a href="forms.html">Forms</a></h4>
-        		  <p>A combination of robust, extensible form styles and the built-in power of the Foundation Grid means you can create simple or complicated forms quickly and easily; validation states, custom select and radio buttons and more are included.</p>
-      			</div>
+  				<p>This example uses the opposite rules, so the following text should inversely describe the device you're using:
+            <strong class="hide-for-xlarge">You are not on a very large screen.</strong>
+            <strong class="hide-for-large">You are not on a large screen.</strong>
+            <strong class="hide-for-large-up">You are not on a large or very large screen.</strong>
+            <strong class="hide-for-medium-down">You are not on a medium or small screen.</strong>
+            <strong class="hide-for-medium">You are not on a medium screen.</strong>
+            <strong class="hide-for-small">You are not on a small screen.</strong>
+  				</p>
 
-      			<div class="six columns">
-        		  <h4><a href="nav.html">Navigation</a></h4>
-        		  <p>People have to get around. Navigation styles in Foundation include simple top bars, sidebars, and subnav pills. We've also included a crazy powerful, responsive top bar that supports N-level dropdowns.</p>
+  				<script src="https://gist.github.com/2993824.js?file=f3-hide-size.html"></script>
 
-        		  <h4><a href="tabs.html">Tabs</a></h4>
-        		  <p>Whether it's pages or simply tabbed content, Foundation's tabs are not only styled up, but interactive out of the box.</p>
+  				<h5>Orientation Detection</h5>
+  				<p>The following text should describe the device you're using:
+            <strong class="show-for-landscape">You are in landscape orientation.</strong>
+            <strong class="show-for-portrait">You are in protrait orientation.</strong>
+  				</p>
 
-        		  <h4><a href="ui.html">Elements</a></h4>
-        		  <p>We've also included lots of useful elements like visibility classes (to hide or show things based on screen size or orientation), labels, alerts, tooltips, panels and a lot more.</p>
+  				<script src="https://gist.github.com/2993845.js?file=f3-orientation.html"></script>
 
-        		  <h4><a href="orbit.html">Orbit</a></h4>
-        		  <p>Orbit is an image or content slider that's designed to work responsively, and includes lots of useful options like timers, paddles, bullets, thumbs and more. It's easy to use and very flexible.</p>
+  				<h5>Touch Detection</h5>
+  				<p>The following text should describe the device you're using:
+            <strong class="show-for-touch">You are on a touch-enabled device.</strong>
+            <strong class="hide-for-touch">You are not on a touch-enabled device.</strong>
+  				</p>
 
-        		  <h4><a href="reveal.html">Reveal</a></h4>
-        		  <p>If you need modal dialogs Reveal has you covered. You can easily call modals without writing any JS, and modals can now even call subsequent modals cleanly on the same page.</p>
+  				<script src="https://gist.github.com/2993838.js?file=f3-touch.html"></script>
 
+  				<p><strong>Note:</strong> These classes have been listed in order of precendence. Touch classes will override orientation, which will override size.</p>
 
-      			</div>
-    			</div>
+  				<hr />
+
+    			<h4>Alerts</h4>
+  				<p>Alerts are a handy element you can drop into a form or inline on a page to communicate success, warnings, failure or just information. The syntax is extremely simple and like everything else in Foundation, easy to customize.</p>
+
+  				<div class="alert-box">
+  					This is a standard alert (div.alert-box).
+  					<a href="ui.html" class="close">&times;</a>
+  				</div>
+
+  				<div class="alert-box success">
+  					This is a success alert (div.alert-box.success).
+  					<a href="ui.html" class="close">&times;</a>
+  				</div>
+
+  				<div class="alert-box alert">
+  					This is an alert (div.alert-box.alert).
+  					<a href="ui.html" class="close">&times;</a>
+  				</div>
+
+  				<div class="alert-box secondary">
+  					This is a secondary alert (div.alert-box.secondary).
+  					<a href="ui.html" class="close">&times;</a>
+  				</div>
+
+  				<script src="https://gist.github.com/2984343.js?file=f3-alert-box.html"></script>
+
+  				<hr />
+
+  				<h4>Labels</h4>
+  				<p>Labels are useful inline styles that can be dropped into body copy to call out certain sections or to attach metadata. Examples might be noting when something was updated or that something is new. The syntax is simple, just a <code>span</code> element with a class of .label. The border styling mirrors that of the Foundation buttons.</p>
+
+  				<div class="row">
+  					<div class="three columns phone-two">
+  						<p>
+  							<span class="label">Regular Label</span><br />
+  							<span class="radius label">Radius Label</span><br />
+  							<span class="round label">Round Label</span>
+  						</p>
+  					</div>
+  					<div class="three columns end phone-two">
+  						<p>
+  							<span class="secondary radius label">Secondary Label</span><br />
+  							<span class="alert label">Alert Label</span><br />
+  							<span class="success round label">Success Label</span><br />
+  						</p>
+  					</div>
+  				</div>
+
+          <p><span class="radius label">Example Label</span> This label could read a date for an update or it could include an author name or anything really. Inline labels are pretty handy when you need to draw attention or visually separate a short piece of content.</p>
+
+          <script src="https://gist.github.com/2984340.js?file=f3-inline-labels.html"></script>
+
+          <hr />
+
+          <h4>Tooltips</h4>
+  				<p>Tooltips are a quick way to provide extended information on a term or action on a page. They work cross browser and cross platform and are easily added to a page by including the jquery.tooltip.js plugin. You can apply the <strong>has-tip</strong> class to any element.</p>
+
+  				<p>By default, the tooltip takes the width of the element that it is applied to, but you can override this behavior by applying a <strong>data-width</strong> attribute to the target element. The tooltip takes on the content of the targets <strong>title</strong> attribute.</p>
+
+  				<p>The tooltips can be positioned on the <span class="has-tip" data-width="210" title="I'm on bottom and the default position.">"tip-bottom"</span>, which is the default position, <span class="has-tip tip-top noradius" data-width="210" title="I'm on the top and I'm not rounded!">"tip-top" (hehe)</span>, <span class="has-tip tip-left" data-width="90" title="I'm on the left!">"tip-left"</span>, or <span class="has-tip tip-right" data-width="120" title="I'm on the right!">"tip-right"</span> of the target element. On a small device, the tooltips are full width and bottom aligned.</p>
+
+  				<script src="https://gist.github.com/2984356.js?file=f3-tooltips.html"></script>
+
+  				<hr />
+
+  				<h4>Keystrokes</h4>
+  				<p>If you have keyboard affordances you might need to explain them, and to that end there's a simple keystroke character affordance in Foundation.</p>
+  				<p>For example, to close your browser hit <kbd>Cmd</kbd> + <kbd>Q</kbd>. Don't actually do it. There's more docs to read.</p>
+  				<script src="https://gist.github.com/3000680.js?file=f3-keystroke.html"></script>
+
+  				<hr />
+
+  				<h4>Panels</h4>
+  				<p>A panel is a simple, helpful css class that enables you to outline sections of your page easily. This allows you to view your page sections as you add content to them, or add emphasis to a section. There are two styles built in, and they support a class of <code>.radius</code> to round them off.</p>
+
+  				<div class="row">
+  				  <div class="six columns">
+              <div class="panel">
+              	<h5>This is a regular panel.</h5>
+              	<p>It has an easy to override visual style, and is appropriately subdued.</p>
+              </div>
             </div>
+            <div class="six columns">
+              <div class="panel callout radius">
+              	<h5>This is a callout panel.</h5>
+              	<p>It's a little ostentatious, but useful for important content.</p>
+              </div>
+            </div>
+          </div>
+
+  				<script src="https://gist.github.com/2984372.js?file=f3-panels.html"></script>
+
+  				<hr />
+
+  				<h4>Link List</h4>
+  				<p>When you just need a horizontal list of links, like in a footer, and you want more control than just spaces between them you can use this simple construct.</p>
+
+          <ul class="link-list">
+            <li><a href="ui.html#">Link 1</a></li>
+            <li><a href="ui.html#">Link 2</a></li>
+            <li><a href="ui.html#">Link 3</a></li>
+            <li><a href="ui.html#">Link 4</a></li>
+            <li><a href="ui.html#">Link 5</a></li>
+          </ul>
+
+          <script src="https://gist.github.com/2989329.js?file=f3-link-list.html"></script>
+
+  				<hr />
+
+  				<h4>Video</h4>
+  				<p>If you're embedding video from YouTube, Vimeo, or another site that uses iframe, embed or object elements you can wrap your video in <code>div.flex-video</code> to create an intrinsic ratio that will properly scale your video on any device.</p>
+
+  				<dl class="tabs contained">
+  					<dd class="active"><a href="ui.html#video1">4:3</a></dd>
+  					<dd><a href="ui.html#video2">Widescreen</a></dd>
+  					<dd><a href="ui.html#video3">Vimeo</a></dd>
+  				</dl>
+  				<ul class="tabs-content contained">
+  					<li class="active" id="video1Tab">
+  						<div class="flex-video">
+  							<iframe width="420" height="315" src="http://www.youtube.com/embed/9otNWTHOJi8" frameborder="0" allowfullscreen></iframe>
+  						</div>
+  						4:3 is the default size for the .flex-video element, and the assumption for .flex-video for chrome (controls) height is based on YouTube.
+  					</li>
+  					<li id="video2Tab">
+  						<div class="flex-video widescreen">
+  							<iframe width="560" height="315" src="http://www.youtube.com/embed/N966cATFWjI" frameborder="0" allowfullscreen></iframe>
+  						</div>
+  						By adding a class of .widescreen we change the ratio to 16:9, ideal for more recent video and most popular YouTube or Vimeo embeds.
+  					</li>
+  					<li id="video3Tab">
+  						<div class="flex-video widescreen vimeo">
+  							<iframe src="http://player.vimeo.com/video/21762736?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  						</div>
+  						Because Vimeo places their chrome on the player itself, adding a class of .vimeo creates a container that is sized for the video only - no extra padding for the controls.
+  					</li>
+  				</ul>
+
+  				<script src="https://gist.github.com/3055910.js?file=f3-flex-video.html"></script>            </div>
              <div class="four columns">
                 <div class="panel hide-on-phones">
                     <h4>Get Yii Foundation</h4>
@@ -188,7 +322,7 @@
           </div>
         </section>
         <section id="sidebar" role="complementary">
-            <dl class="tabs nice vertical hide-on-phones"><dd class="active"><a href="index.html">Getting Started</a></dd>
+            <dl class="tabs nice vertical hide-on-phones"><dd class=""><a href="index.html">Getting Started</a></dd>
 <dd class=""><a target="_blank" href="http://www.yiiframework.com/extension/foundation3/">Installing</a></dd>
 <dd class=""><a href="grid.html">Grid</a></dd>
 <dd class=""><a href="typo.html">Typography</a></dd>
@@ -196,7 +330,7 @@
 <dd class=""><a href="forms.html">Forms</a></dd>
 <dd class=""><a href="nav.html">Navigation</a></dd>
 <dd class=""><a href="tabs.html">Tabs</a></dd>
-<dd class=""><a href="ui.html">Elements</a></dd>
+<dd class="active"><a href="ui.html">Elements</a></dd>
 <dd class=""><a href="orbit.html">Orbit</a></dd>
 <dd class=""><a href="reveal.html">Reveal</a></dd>
 <dd class=""><a href="qa.html">Support</a></dd>
@@ -270,7 +404,7 @@
 
     <div id="navModal" class="reveal-modal">
         <h3>Yii Foundation 3 Docs</h3>
-        <dl class="tabs nice vertical"><dd class="active"><a href="index.html">Getting Started</a></dd>
+        <dl class="tabs nice vertical"><dd class=""><a href="index.html">Getting Started</a></dd>
 <dd class=""><a target="_blank" href="http://www.yiiframework.com/extension/foundation3/">Installing</a></dd>
 <dd class=""><a href="grid.html">Grid</a></dd>
 <dd class=""><a href="typo.html">Typography</a></dd>
@@ -278,7 +412,7 @@
 <dd class=""><a href="forms.html">Forms</a></dd>
 <dd class=""><a href="nav.html">Navigation</a></dd>
 <dd class=""><a href="tabs.html">Tabs</a></dd>
-<dd class=""><a href="ui.html">Elements</a></dd>
+<dd class="active"><a href="ui.html">Elements</a></dd>
 <dd class=""><a href="orbit.html">Orbit</a></dd>
 <dd class=""><a href="reveal.html">Reveal</a></dd>
 <dd class=""><a href="qa.html">Support</a></dd>
@@ -288,7 +422,7 @@
     <h2>This is a modal.</h2>
     <p>Reveal makes these very easy to summon and dismiss. The close button is simple an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
     <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-    <p><a href="index.html#" data-reveal-id="secondModal" class="secondary button">Second Modal&hellip;</a></p>
+    <p><a href="ui.html#" data-reveal-id="secondModal" class="secondary button">Second Modal&hellip;</a></p>
     <a class="close-reveal-modal">&#215;</a>
   </div>
 

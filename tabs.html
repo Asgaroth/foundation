@@ -31,7 +31,7 @@
 <link rel="stylesheet" type="text/css" href="css/zurb.mega-drop.css" />
 <link rel="stylesheet" type="text/css" href="css/foundation.top-bar.css" />
 <script type="text/javascript" src="assets/444c92ff/jquery.js"></script>
-<title>Yii Foundation 3 : Get Started</title>
+<title>Yii Foundation 3 : Yii Foundation 3 - Tabs Site</title>
     <link rel="icon" type="image/ico" href="favicon.ico">
 
     <!-- Included CSS Files -->
@@ -95,7 +95,7 @@
         <h4 class="subheader">Everything you need to know to build for the future.</h4>
 
       <div class="show-for-small menu-action">
-        <a class='sidebar-button small secondary button' id='sidebarButton' href="index.html#sidebar">
+        <a class='sidebar-button small secondary button' id='sidebarButton' href="tabs.html#sidebar">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
             <line fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" x1="0" y1="8.907" x2="48" y2="8.907"/>
             <line fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" x1="0" y1="24.173" x2="48" y2="24.173"/>
@@ -111,62 +111,104 @@
         <section role="main">
           <div class="row">
             <div class="eight columns">
-                  			<h3>Welcome to Foundation 3.</h3>
-    			<p>Foundation 3 is built on ZURB's 14 years of experience at building sites and apps for the Web. We believe designing responsively &mdash; designing for all devices and any device &mdash; is the future. Foundation is our way of helping you do that. What changed in Foundation 3? Almost everything. Here's what makes Foundation, Foundation.</p>
 
-    			<div class="row">
-    			  <div class="four columns">
-      			  <h5>Developed with Sass</h5>
-      			  <p>Foundation 3 is built with Sass, a powerful CSS preprocessor, which allows us to much more quickly develop Foundation itself, as well as sites built with it. You can use the Sass or straight CSS version of Foundation.</p>
-    			  </div>
-    			  <div class="four columns">
-      			  <h5>Feature Complete</h5>
-      			  <p>New button elements, new navigation types, new form styles and options, and tons of streamlining make this the fastest way to prototype responsively, and to take that code and go right to production.</p>
-    			  </div>
-    			  <div class="four columns">
-      			  <h5>Freakishly Advanced</h5>
-      			  <p>Foundation is the most advanced front-end Web framework in the world. While the Framework works back all the way to IE8, we're taking advantage of new, awesome Web technology to help you build faster and better.</p>
-    			  </div>
-    			</div>
+    			<h3>Tabs</h3>
+    			<h4 class="subheader">Tabs are very versatile both as organization and navigational constructs. With the base Foundation package, tabs in the markup specified below are already hooked up &mdash; no extra work required.</h4>
 
-    			<hr />
+  				<hr />
 
-    			<h3>Features of Foundation</h3>
-    			<div class="row">
-      			<div class="six columns">
-        			<h4><a href="grid.html">The Grid</a></h4>
-        			<p>Much of the power of Foundation comes from the grid, a 12-column typographic grid designed to work on almost any sized device screen. With support for nesting, source ordering, offsets and small device presentation it almost makes this too easy.</p>
+  				<h4>Simple Tabs</h4>
 
-        			<h4><a href="typo.html">Typography</a></h4>
-        			<p>The typography in Foundation is based on a golden ratio modular scale, so all of your typgraphic elements look great together. Through the power of Sass, the typography is also easy to change both in the base size and ratio.</p>
+    			<p>Tabs are made of <strong>two objects:</strong> a <code>dl</code> object containing the tabs themselves, and a <code>ul</code> object containing the tab content. If you simply want visual tabs (as seen in this documentation) without the on-page hookup, you only need the DL. If you want functional tabs, just be sure that each tab is linked to an ID, and that the corresponding tab has an ID of <code>#tabnameTab</code>. Check out these examples.</p>
 
-        			<h4><a href="buttons.html">Buttons</a></h4>
-        			<p>Buttons are one of the core interactive elements of the Web. We've included styles and patterns for buttons that make it simple to create everything from simple marketing CTAs to complex application toolbars.</p>
+  				<p><em>Note: The third tab is using the <a href="http://localhost/foundation-demo/elements.php">mobile visibility classes</a> to hide on small devices.</em></p>
 
-        		  <h4><a href="forms.html">Forms</a></h4>
-        		  <p>A combination of robust, extensible form styles and the built-in power of the Foundation Grid means you can create simple or complicated forms quickly and easily; validation states, custom select and radio buttons and more are included.</p>
-      			</div>
+  				<dl class="tabs">
+  					<dd class="active"><a href="tabs.html#simple1">Simple Tab 1</a></dd>
+  					<dd><a href="tabs.html#simple2">Simple Tab 2</a></dd>
+  					<dd class="hide-for-small"><a href="tabs.html#simple3">Simple Tab 3</a></dd>
+  				</dl>
+  				<ul class="tabs-content">
+  					<li class="active" id="simple1Tab">This is simple tab 1's content. Pretty neat, huh?</li>
+  					<li id="simple2Tab">This is simple tab 2's content. Now you see it!</li>
+  					<li id="simple3Tab">This is simple tab 3's content. It's only okay.</li>
+  				</ul>
 
-      			<div class="six columns">
-        		  <h4><a href="nav.html">Navigation</a></h4>
-        		  <p>People have to get around. Navigation styles in Foundation include simple top bars, sidebars, and subnav pills. We've also included a crazy powerful, responsive top bar that supports N-level dropdowns.</p>
+  				<script src="https://gist.github.com/2984312.js?file=f3-simple-tabs.html"></script>
 
-        		  <h4><a href="tabs.html">Tabs</a></h4>
-        		  <p>Whether it's pages or simply tabbed content, Foundation's tabs are not only styled up, but interactive out of the box.</p>
+  				<hr />
 
-        		  <h4><a href="ui.html">Elements</a></h4>
-        		  <p>We've also included lots of useful elements like visibility classes (to hide or show things based on screen size or orientation), labels, alerts, tooltips, panels and a lot more.</p>
+  				<h4>Tab Sizing</h4>
+  				<p>If you want your tabs to run the full width of their container evenly, you can add class of <code>.two-up</code>, <code>.three-up</code>, <code>.four-up</code>, and <code>.five-up</code> to them.</p>
 
-        		  <h4><a href="orbit.html">Orbit</a></h4>
-        		  <p>Orbit is an image or content slider that's designed to work responsively, and includes lots of useful options like timers, paddles, bullets, thumbs and more. It's easy to use and very flexible.</p>
+          <dl class="tabs three-up">
+          	<dd class="active"><a href="tabs.html#evenTab1">Even Tab 1</a></dd>
+          	<dd><a href="tabs.html#evenTab2">Even Tab 2</a></dd>
+          	<dd><a href="tabs.html#evenTab3">Even Tab 3</a></dd>
+          </dl>
 
-        		  <h4><a href="reveal.html">Reveal</a></h4>
-        		  <p>If you need modal dialogs Reveal has you covered. You can easily call modals without writing any JS, and modals can now even call subsequent modals cleanly on the same page.</p>
+  				<dl class="tabs five-up">
+  					<dd class="active"><a href="tabs.html#evenTab4">Tab 4</a></dd>
+  					<dd><a href="tabs.html#evenTab5">Tab 5</a></dd>
+  					<dd><a href="tabs.html#evenTab6">Tab 6</a></dd>
+  					<dd><a href="tabs.html#evenTab7">Tab 7</a></dd>
+  					<dd><a href="tabs.html#evenTab8">Tab 8</a></dd>
+  				</dl>
 
+  				<script src="https://gist.github.com/2984315.js?file=f3-even-tabs.html"></script>
 
-      			</div>
-    			</div>
-            </div>
+  				<hr />
+
+  				<h4>Contained Tabs</h4>
+  				<p>Contained tabs have a simple added class of "contained" on the tabs-content element. What that means is the tab content has a border around it tying it to the tabs. You can still use standard column sizes inside a tab element.</p>
+
+  				<p>You'll also notice in this example that a <code>dt</code> element can serve to label groups of tabs.</p>
+
+          <dl class="tabs contained">
+          	<dt>Title 1</dt>
+          	<dd class="active"><a href="tabs.html#simpleContained1">Simple Tab 1</a></dd>
+          	<dd class="hide-for-small"><a href="tabs.html#simpleContained2">Simple Tab 2</a></dd>
+          	<dt class="hide-for-small">Title 1</dt>
+          	<dd class="hide-for-small"><a href="tabs.html#simpleContained3">Simple Tab 3</a></dd>
+          </dl>
+          <ul class="tabs-content contained">
+          	<li class="active" id="simpleContained1Tab">This is simple tab 1's content. Pretty neat, huh?</li>
+          	<li id="simpleContained2Tab">This is simple tab 2's content. Now you see it!</li>
+          	<li id="simpleContained3Tab">This is simple tab 3's content. It's only okay.</li>
+          </ul>
+
+  				<script src="https://gist.github.com/2984321.js?file=f3-contained-tabs.html"></script>
+
+  				<hr />
+
+  				<h4>Pill-Style Tabs</h4>
+  				<p>If you need an alternate view for tabs (especially for filters, or similar), you can use pill-style tabs. They look like this:</p>
+
+          <dl class="tabs pill">
+          	<dd class="active"><a href="tabs.html#pillTab1">Pill Tab 1</a></dd>
+          	<dd><a href="tabs.html#pillTab2">Pill Tab 2</a></dd>
+          	<dd class="hide-for-small"><a href="tabs.html#pillTab3">Pill Tab 3</a></dd>
+          </dl>
+
+  				<script src="https://gist.github.com/3000706.js?file=f3-pill-tabs.html"></script>
+
+  				<hr />
+
+  				<h4>Vertical Tabs</h4>
+  				<p>You can also use tabs in a vertical configuration by adding a class of 'vertical' to the <code>dl</code> element. These are great for more scalable nav, and you can see how they work on this page on a tablet or desktop.</p>
+
+          <dl class="nice vertical tabs">
+          	<dd class="active"><a href="tabs.html#vertical1">Vertical Tab 1</a></dd>
+          	<dd><a href="tabs.html#vertical2">Vertical Tab 2</a></dd>
+          	<dd><a href="tabs.html#vertical3">Vertical Tab 3</a></dd>
+          </dl>
+
+  				<script src="https://gist.github.com/2984322.js?file=f3-vertical-tabs.html"></script>
+
+  				<hr />
+
+  				<h4>Mobile Tabs</h4>
+  				<p>If you want a standard, horizontal tab group to act vertical on small devices, adding a class of "mobile" to a standard (not vertical) tab group will switch them to full width nav bars on small screens.</p>            </div>
              <div class="four columns">
                 <div class="panel hide-on-phones">
                     <h4>Get Yii Foundation</h4>
@@ -188,14 +230,14 @@
           </div>
         </section>
         <section id="sidebar" role="complementary">
-            <dl class="tabs nice vertical hide-on-phones"><dd class="active"><a href="index.html">Getting Started</a></dd>
+            <dl class="tabs nice vertical hide-on-phones"><dd class=""><a href="index.html">Getting Started</a></dd>
 <dd class=""><a target="_blank" href="http://www.yiiframework.com/extension/foundation3/">Installing</a></dd>
 <dd class=""><a href="grid.html">Grid</a></dd>
 <dd class=""><a href="typo.html">Typography</a></dd>
 <dd class=""><a href="buttons.html">Buttons</a></dd>
 <dd class=""><a href="forms.html">Forms</a></dd>
 <dd class=""><a href="nav.html">Navigation</a></dd>
-<dd class=""><a href="tabs.html">Tabs</a></dd>
+<dd class="active"><a href="tabs.html">Tabs</a></dd>
 <dd class=""><a href="ui.html">Elements</a></dd>
 <dd class=""><a href="orbit.html">Orbit</a></dd>
 <dd class=""><a href="reveal.html">Reveal</a></dd>
@@ -270,14 +312,14 @@
 
     <div id="navModal" class="reveal-modal">
         <h3>Yii Foundation 3 Docs</h3>
-        <dl class="tabs nice vertical"><dd class="active"><a href="index.html">Getting Started</a></dd>
+        <dl class="tabs nice vertical"><dd class=""><a href="index.html">Getting Started</a></dd>
 <dd class=""><a target="_blank" href="http://www.yiiframework.com/extension/foundation3/">Installing</a></dd>
 <dd class=""><a href="grid.html">Grid</a></dd>
 <dd class=""><a href="typo.html">Typography</a></dd>
 <dd class=""><a href="buttons.html">Buttons</a></dd>
 <dd class=""><a href="forms.html">Forms</a></dd>
 <dd class=""><a href="nav.html">Navigation</a></dd>
-<dd class=""><a href="tabs.html">Tabs</a></dd>
+<dd class="active"><a href="tabs.html">Tabs</a></dd>
 <dd class=""><a href="ui.html">Elements</a></dd>
 <dd class=""><a href="orbit.html">Orbit</a></dd>
 <dd class=""><a href="reveal.html">Reveal</a></dd>
@@ -288,7 +330,7 @@
     <h2>This is a modal.</h2>
     <p>Reveal makes these very easy to summon and dismiss. The close button is simple an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
     <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-    <p><a href="index.html#" data-reveal-id="secondModal" class="secondary button">Second Modal&hellip;</a></p>
+    <p><a href="tabs.html#" data-reveal-id="secondModal" class="secondary button">Second Modal&hellip;</a></p>
     <a class="close-reveal-modal">&#215;</a>
   </div>
 

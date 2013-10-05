@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" /
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- For third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicons/apple-touch-icon-144x144-precomposed.png">
+  <!-- For iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicons/apple-touch-icon-114x114-precomposed.png">
+  <!-- For first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicons/apple-touch-icon-72x72-precomposed.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="images/favicons/apple-touch-icon-precomposed.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="icon" href="images/favicons/favicon.ico" type="image/x-icon" />
+  <meta name="keywords" content="foundation, design, frameworks, framework, css framework, html framework, html5, css3, SASS, SCSS, compass, responsive, design" />
+  <meta name="description" content="Documentation for Foundation by ZURB. Foundation is the most advanced responsive front-end framework in the world." />
+  <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com" />
+  <meta name="copyright" content="ZURB, inc. Copyright (c) 2012" />
+
+            <link rel="stylesheet" type="text/css" href="assets/b29848ec/stylesheets/foundation.css" />
+<link rel="stylesheet" type="text/css" href="css/zurb.mega-drop.css" />
+<link rel="stylesheet" type="text/css" href="css/foundation.top-bar.css" />
+<script type="text/javascript" src="assets/444c92ff/jquery.js"></script>
+<title>Yii Foundation 3 : Yii Foundation 3 - Forms Site</title>
+    <link rel="icon" type="image/ico" href="favicon.ico">
+
+    <!-- Included CSS Files -->
+    <link rel="stylesheet" href="css/presentation.css">
+
+   <!--[if lt IE 9]>
+        <link rel="stylesheet" href="../stylesheets/ie.css">
+    <![endif]-->
+
+    <!-- IE Fix for HTML5 Tags -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6958144-5']);
+  _gaq.push(['_setDomainName', 'oakwebdev.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+  <!-- ZURBar -->
+  <div class="container top-bar home-border">
+    <div class="attached">
+      <div class="name">
+        <span><a href="index.html">Yii Foundation 3</a></span>
+      </div>
+        <ul class="right">
+            <li class="show-for-small">
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="grid.html">Features</a>
+            </li>
+            <li>
+              <a href="http://twitter.com/#!/asgarothbelem">@AsgarothBelem</a>
+            </li>
+            <li>
+              <a href="index.html">Documentation</a>
+            </li>
+            <li>
+                <a href="https://github.com/Asgaroth/foundation">Github</a>
+            </li>
+            <li class="download"><a class="small blue nice button src-download" href="http://www.yiiframework.com/extension/foundation3/">Download</a></li>
+        </ul>
+    </div>
+  </div>
+  <!-- /ZURBar -->
+     <header id="header" class="row">
+      <div class="eight columns">
+        <h1><a href="index.html">Yii Foundation 3 Documentation</a></h1>
+        <h4 class="subheader">Everything you need to know to build for the future.</h4>
+
+      <div class="show-for-small menu-action">
+        <a class='sidebar-button small secondary button' id='sidebarButton' href="forms.html#sidebar">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+            <line fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" x1="0" y1="8.907" x2="48" y2="8.907"/>
+            <line fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" x1="0" y1="24.173" x2="48" y2="24.173"/>
+            <line fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" x1="0" y1="39.439" x2="48" y2="39.439"/>
+            Menu
+          </svg>
+        </a>
+      </div>
+      </div>
+    </header>
+
+    <div class="row">
+        <section role="main">
+          <div class="row">
+            <div class="eight columns">
+              <h3>Forms</h3>
+<h4 class="subheader">We set out in Foundation 3 to create an easy to handle, powerful, and versatile form layout system. A combination of form styles and the Foundation grid means you can do basically anything.</h4>
+
+<h4>The Basics</h4>
+<p>Form elements in Foundation 3 are styled based on their type attribute rather than <code>.input-text</code> classes, so the SCSS/CSS is much simpler.</p>
+<p>Inputs in Foundation 3 have another major change &mdash; <strong>they are full width by default.</strong> That means that inputs will run as wide as the column that contains them. However, you have two options which make these forms extremely versatile:</p>
+<ul class="disc">
+  <li>You can size inputs using column sizes, like <code>.six</code>.</li>
+  <li>You can create <code>row</code> elements inside your form and use columns for the form, including inputs, labels and more. Rows inside a form inherit some special padding to even up input spacing.</li>
+</ul>
+
+<hr />
+
+
+<h4>Forms</h4>
+<p>Forms in Yii Foundation are created using the FounActiveForm</p>
+<script src="https://gist.github.com/3050940.js"> </script>
+
+<h4>Row Layouts</h4>
+<p>Here's an example of a form layout controlled with rows and columns.</p>
+
+<form class="" id="yw0" action="forms.html" method="post"><label for="SimpleForm_field1">This is a label.</label><input placeholder="Standard Input" name="SimpleForm[field1]" id="SimpleForm_field1" type="text" />
+<label for="SimpleForm_field1_1">Address</label><input placeholder="Street" name="SimpleForm[field1_1]" id="SimpleForm_field1_1" type="text" />
+<div class="row">
+  <div class="six columns">
+      <input placeholder="City" name="SimpleForm[field1_2]" id="SimpleForm_field1_2" type="text" />  </div>
+  <div class="three columns">
+      <input placeholder="State" name="SimpleForm[field1_3]" id="SimpleForm_field1_3" type="text" />  </div>
+  <div class="three columns">
+      <input placeholder="ZIP" name="SimpleForm[field2]" id="SimpleForm_field2" type="text" />  </div>
+</div>
+</form><script src="https://gist.github.com/3050987.js"> </script>
+
+<p>Sometimes you want a form with labels to the left of your inputs. Piece of cake.
+    You can add a class of <code>.right</code> to a label to have it align to the right,
+    and if your label is next to an input (in another column) adding a class of <code>.inline</code>
+    will have it vertically center against an input.
+</p>
+
+<form class="" id="yw1" action="forms.html" method="post"><div class="row">
+    <div class="two mobile-one columns">
+        <label class="right" for="SimpleForm_field3">Address Name:</label>    </div>
+    <div class="ten mobile-three columns">
+        <input placeholder="e.g. Home" class="eight" name="SimpleForm[field3]" id="SimpleForm_field3" type="text" />    </div>
+</div>
+<div class="row">
+    <div class="two mobile-one columns">
+        <label class="right" for="SimpleForm_field4">City:</label>    </div>
+    <div class="ten mobile-three columns">
+        <input class="eight" name="SimpleForm[field4]" id="SimpleForm_field4" type="text" />    </div>
+</div>
+<div class="row">
+    <div class="two mobile-one columns">
+        <label class="right" for="SimpleForm_field5">ZIP:</label>    </div>
+    <div class="ten mobile-three columns">
+        <input class="three" name="SimpleForm[field4]" id="SimpleForm_field4" type="text" />    </div>
+</div>
+</form>
+<script src="https://gist.github.com/3113919.js"> </script>
+
+<hr />
+
+<h4>Fieldsets</h4>
+<p>Simple elements that can contain all or part of a form to create better division.</p>
+<form class="" id="yw2" action="forms.html" method="post"><fieldset>
+
+    <legend>Fieldset Name</legend>
+    <label for="SimpleForm_field6">This is a label.</label><input placeholder="Standard Input" name="SimpleForm[field6]" id="SimpleForm_field6" type="text" />
+
+    <label for="SimpleForm_field7">Address</label><input name="SimpleForm[field7]" id="SimpleForm_field7" type="text" />
+    <input class="six" name="SimpleForm[field8]" id="SimpleForm_field8" type="text" />
+
+</fieldset>
+</form>
+<script src="https://gist.github.com/3113937.js"> </script>
+
+<hr />
+
+
+<h4>Labels and Actions with Collapsed Columns</h4>
+<p>Foundation forms support actions tied to buttons, and prefix / postfix labels, through a versatile approach using special grid properties.
+ Essentially you can use a 'collapsed' row to create label / action / input combinations. Here are a few examples.</p>
+
+<form class="" id="yw3" action="forms.html" method="post"><div class="row">
+  <div class="four columns">
+        <label for="SimpleForm_field9">Input with a prefix character</label><div class="row collapse"><div class="two columns mobile-one"><span class="prefix">#</span></div><div class="ten columns mobile-three"><input name="SimpleForm[field9]" id="SimpleForm_field9" type="text" /></div></div>
+  </div>
+</div>
+</form><script src="https://gist.github.com/3118412.js"> </script>
+
+          <p><strong>Note:</strong> for these prefix and postfix labels we're using the <a href="http://localhost/foundation-demo/grid.php">mobile grid</a> to size our labels correctly on small devices.</p>
+
+<form class="" id="yw4" action="forms.html" method="post"><div class="row">
+  <div class="five columns">
+        <label for="SimpleForm_field10">Input with a postfix label</label><div class="row collapse"><div class="nine columns mobile-three"><input name="SimpleForm[field10]" id="SimpleForm_field10" type="text" /></div><div class="three columns mobile-one"><span class="postfix">.com</span></div></div>
+  </div>
+</div>
+</form><script src="https://gist.github.com/3118443.js"> </script>
+
+
+<form class="" id="yw5" action="forms.html" method="post"><div class="row">
+  <div class="five columns">
+        <label for="SimpleForm_field11">Input with a postfix action (button)</label><div class="row collapse"><div class="eight columns mobile-three"><input name="SimpleForm[field11]" id="SimpleForm_field11" type="text" /></div><div class="four columns mobile-one"><a href="forms.html#" class="postfix button">Search</a></div></div>
+  </div>
+</div>
+</form>
+<script src="https://gist.github.com/3118721.js"> </script>
+
+<hr />
+
+<h4>Error States</h4>
+<p>Foundation includes error states for labels, inputs and messaging that you can have your app generate programatically.
+ You can attach a class of <code>.error</code> either to the individual elements (label, input, small) or to a container column or div.</p>
+
+<form class="" id="yw6" action="forms.html" method="post"><div class="row">
+  <div class="five columns">
+    <div class="error"><label class="error required" for="SimpleForm_field12">Field with Error <span class="required">*</span></label><input name="SimpleForm[field12]" id="SimpleForm_field12" type="text" class="error" /><small>Invalid entry</small></div>  </div>
+  <div class="five columns end">
+    <div class="error"><label class="error required" for="SimpleForm_field13">Another Error <span class="required">*</span></label><input name="SimpleForm[field13]" id="SimpleForm_field13" type="text" class="error" /><small>Invalid entry</small></div>  </div>
+</div>
+</form><script src="https://gist.github.com/3118741.js"> </script>
+<hr />
+
+<form class="" id="yw7" action="forms.html" method="post"><fieldset>
+  <legend>Large Form Example</legend>
+  <div class="row">
+    <div class="five columns">
+      <label for="SimpleForm_field14">Name</label><input name="SimpleForm[field14]" id="SimpleForm_field14" type="text" />      <label for="SimpleForm_field15">Occupation</label><input name="SimpleForm[field15]" id="SimpleForm_field15" type="text" />      <label for="SimpleForm_field16">Twitter</label><div class="row collapse"><div class="two columns mobile-one"><span class="prefix">@</span></div><div class="ten columns mobile-three"><input placeholder="asgarothbelem" name="SimpleForm[field16]" id="SimpleForm_field16" type="text" /></div></div>
+      <label for="SimpleForm_field17">URL</label><div class="row collapse"><div class="nine columns mobile-three"><input placeholder="foundation.oakwebdev" name="SimpleForm[field17]" id="SimpleForm_field17" type="text" /></div><div class="three columns mobile-one"><span class="postfix">.com</span></div></div>
+    </div>
+    <div class="five columns">
+      <div class="error"><label class="error required" for="SimpleForm_field18">Field with Error <span class="required">*</span></label><input name="SimpleForm[field18]" id="SimpleForm_field18" type="text" class="error" /><small>Invalid entry</small></div>      <div class="error"><label class="error required" for="SimpleForm_field19">Another Error <span class="required">*</span></label><input name="SimpleForm[field19]" id="SimpleForm_field19" type="text" class="error" /><small>Invalid entry</small></div>    </div>
+  </div>
+  <label for="SimpleForm_field20">Address</label><input placeholder="Street (e.g. 123 Awesome St.)" name="SimpleForm[field20]" id="SimpleForm_field20" type="text" />  <div class="row">
+    <div class="six columns">
+      <input placeholder="City" name="SimpleForm[field21]" id="SimpleForm_field21" type="text" />    </div>
+    <div class="two columns">
+      <select name="SimpleForm[field22]" id="SimpleForm_field22">
+<option value="CA">CA</option>
+</select>    </div>
+    <div class="four columns">
+      <input placeholder="ZIP" name="SimpleForm[field23]" id="SimpleForm_field23" type="text" />    </div>
+  </div>
+</fieldset>
+</form><p><a href="https://gist.github.com/3118835" target="_blank">View the code for this form &rarr;</a></p>
+<hr />
+
+<h4>Custom Inputs</h4>
+<form class="custom" id="yw8" action="forms.html" method="post">  <p>Creating easy to style custom form elements is so crazy easy, it's practically a crime. Just add a type of "custom" to a form and, if you want, jquery.customforms.js will do everything for you.</p>
+  <p>The Foundation forms js will look for any checkbox, radio button, or select element and replace it with custom markup that is already styled with forms.css.</p>
+  <script src="https://gist.github.com/3118850.js"> </script>
+
+  <p>If you want to avoid a potential flash (waiting for js to load and replace your default elements) you can supply the custom markup as part of the page, and the js will instead simply map the custom elements to the inputs.</p>
+  <p>Foundation custom forms will even correctly respect and apply default states for radio, checkbox and select elements. You can use the "checked" or "selected" properties just like normal, and the js will apply that as soon as the page loads.</p>
+
+<h5>Radio Buttons and Checkboxes</h5>
+<div class="row">
+    <div class="four columns">
+      <input id="ytSimpleForm_field24" type="hidden" value="" name="SimpleForm[field24]" /><label for="SimpleForm_field24_0"><input id="SimpleForm_field24_0" value="1" type="radio" name="SimpleForm[field24]" /> Radio Button 1</label><label for="SimpleForm_field24_1"><input id="SimpleForm_field24_1" value="2" type="radio" name="SimpleForm[field24]" /> Radio Button 2</label><label for="SimpleForm_field24_2"><input id="SimpleForm_field24_2" value="3" type="radio" name="SimpleForm[field24]" /> Radio Button 3</label>    </div>
+    <div class="four columns">
+      <input id="ytSimpleForm_field25" type="hidden" value="" name="SimpleForm[field25]" /><label for="SimpleForm_field25_0"><input id="SimpleForm_field25_0" value="1" type="radio" name="SimpleForm[field25]" /> Radio Button 1</label><label for="SimpleForm_field25_1"><input id="SimpleForm_field25_1" value="2" checked="checked" type="radio" name="SimpleForm[field25]" /> Radio Button 2</label><label for="SimpleForm_field25_2"><input id="SimpleForm_field25_2" value="3" type="radio" name="SimpleForm[field25]" /> Radio Button 3</label>    </div>
+    <div class="four columns">
+      <input id="ytSimpleForm_field26" type="hidden" value="" name="SimpleForm[field26]" /><label for="SimpleForm_field26_0"><input id="SimpleForm_field26_0" value="1" type="checkbox" name="SimpleForm[field26][]" /> Label for Checkbox</label><label for="SimpleForm_field26_1"><input id="SimpleForm_field26_1" value="2" checked="checked" type="checkbox" name="SimpleForm[field26][]" /> Label for Checkbox</label><label for="SimpleForm_field26_2"><input id="SimpleForm_field26_2" value="3" checked="checked" type="checkbox" name="SimpleForm[field26][]" /> Label for Checkbox</label>    </div>
+</div>
+<br /><br />
+<script src="https://gist.github.com/3118889.js"> </script>
+<br />
+<h5>Dropdown / Select Elements</h5>
+
+<label for="SimpleForm_field27">Dropdown Label</label><select name="SimpleForm[field27]" id="SimpleForm_field27">
+<option value="1" selected="selected">This is a dropdown</option>
+<option value="2">This is another option</option>
+<option value="3">Look, a third option</option>
+</select>
+<label for="SimpleForm_field28">Dropdown Label</label><select name="SimpleForm[field28]" id="SimpleForm_field28">
+<option value="1">This is a dropdown</option>
+<option value="2" selected="selected">This is another option</option>
+<option value="3">Look, a third option</option>
+</select>
+</form>
+<script src="https://gist.github.com/3118907.js"> </script>
+
+<h5>Adding Custom Forms with JavaScript</h5>
+
+<p>If you are creating these custom forms using JavaScript (via AJAX, JavaScript templates or whatever), you will also need to create the custom markup that Foundation typically creates for you.</p>
+
+<p>Foundation detects any custom forms when the document has loaded and adds the custom markup required to make the forms pretty. However, if you are adding these forms after the document has loaded, Foundation does not know to append this markup.</p>
+
+<p>All the custom forms events are bound using jQuery.fn.on(), so you don't need to worry about event handlers not being bound to new elements.</p>
+            </div>
+             <div class="four columns">
+                <div class="panel hide-on-phones">
+                    <h4>Get Yii Foundation</h4>
+                    <p>Download Yii Foundation here to get started quickly. Includes everything you need to get your proyects up and running, take a look at the
+                         <a href="http://www.yiiframework.com/extension/foundation3/">Setup Guide</a>.</p>
+                    <p>
+                        <a href="http://www.yiiframework.com/extension/foundation3/" class="nice radius blue button mobile src-download">Download Yii Foundation</a>
+                    </p>
+                </div>
+                <div class="panel hide-on-phones">
+                    <h4>Yii Foundation 2 </h4>
+                    <p>Looking for Yii Foundation 2 Documentation?
+                    </p>
+                    <p>
+                        <a href="foundation2/index.html" class="nice radius blue button mobile src-download">Yii Foundation 2 Documentation</a>
+                    </p>
+                </div>
+            </div>
+          </div>
+        </section>
+        <section id="sidebar" role="complementary">
+            <dl class="tabs nice vertical hide-on-phones"><dd class=""><a href="index.html">Getting Started</a></dd>
+<dd class=""><a target="_blank" href="http://www.yiiframework.com/extension/foundation3/">Installing</a></dd>
+<dd class=""><a href="grid.html">Grid</a></dd>
+<dd class=""><a href="typo.html">Typography</a></dd>
+<dd class=""><a href="buttons.html">Buttons</a></dd>
+<dd class="active"><a href="forms.html">Forms</a></dd>
+<dd class=""><a href="nav.html">Navigation</a></dd>
+<dd class=""><a href="tabs.html">Tabs</a></dd>
+<dd class=""><a href="ui.html">Elements</a></dd>
+<dd class=""><a href="orbit.html">Orbit</a></dd>
+<dd class=""><a href="reveal.html">Reveal</a></dd>
+<dd class=""><a href="qa.html">Support</a></dd>
+</dl>        </section>
+   </div>
+
+     <div class="row">
+        <div class="twelve columns"><hr /></div>
+      </div>
+
+       <!-- Das Footer -->
+      <footer class="row">
+           <section class="three columns">
+          <h6><strong>Made by AsgarothBelem</strong></h6>
+        <p>Yii Foundation is made by <a href="http://twitter.com/#!/asgarothbelem">AsgarothBelem</a>, a Web programmer and developer located in Bogota, Colombia.</p>
+        </section>
+        <section class="three columns">
+          <h6><strong>Made by ZURB</strong></h6>
+        <p>Foundation is made by <a href="http://www.zurb.com/">ZURB</a>, a product design agency in Campbell, California. We've put more than 14 years of experience building web products, services and websites into this framework. <a href="http://localhost/about.php">Foundation Info and Goodies &rarr;</a></p>
+        </section>
+
+        <section class="three columns">
+          <h6><strong>Using Foundation?</strong></h6>
+          <p>Let us know how you're using Foundation and we might feature you as an example! <a href="mailto:foundation@zurb.com?subject=I'm%20using%20Foundation">Get in touch &rarr;</a></p>
+        </section>
+
+        <section class="three columns">
+          <h6><strong>Need some help?</strong></h6>
+          <p>For answers or help visit the <a href="http://localhost/foundation-demo/support.php">Support page</a>.</p>
+          <ul class="link-list">
+            <li>
+            <a href="http://www.facebook.com/ZURB" target="_blank"><span class="glyph social">d</span></a>
+            </li>
+            <li>
+            <a href="https://plusone.google.com/_/+1/confirm?url=http://foundation.zurb.com&title=Foundation%20from%20ZURB" target="_blank"><span class="glyph social">l</span></a>
+            </li>
+            <li>
+                <a href="http://www.twitter.com/foundationzurb" target="_blank"><span class="glyph social">e</span></a>
+            </li>
+        </ul>
+        </section>
+      </footer>
+
+      <div id="copyright">
+      <div class="row">
+        <div class="four columns">
+          <p>Site content &copy; 2012 ZURB, inc.</p>
+        </div>
+        <div class="eight columns">
+          <ul class="link-list right">
+             <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li class="download"><a class="small blue nice button src-download" href="http://www.yiiframework.com/extension/foundation3/">Download</a></li>
+            <li>
+              <a href="grid.html">Features</a>
+            </li>
+            <li>
+              <a href="http://twitter.com/#!/asgarothbelem">@AsgarothBelem</a>
+            </li>
+            <li>
+              <a href="index.html">Documentation</a>
+            </li>
+            <li>
+                <a href="https://github.com/Asgaroth/foundation">Github</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="navModal" class="reveal-modal">
+        <h3>Yii Foundation 3 Docs</h3>
+        <dl class="tabs nice vertical"><dd class=""><a href="index.html">Getting Started</a></dd>
+<dd class=""><a target="_blank" href="http://www.yiiframework.com/extension/foundation3/">Installing</a></dd>
+<dd class=""><a href="grid.html">Grid</a></dd>
+<dd class=""><a href="typo.html">Typography</a></dd>
+<dd class=""><a href="buttons.html">Buttons</a></dd>
+<dd class="active"><a href="forms.html">Forms</a></dd>
+<dd class=""><a href="nav.html">Navigation</a></dd>
+<dd class=""><a href="tabs.html">Tabs</a></dd>
+<dd class=""><a href="ui.html">Elements</a></dd>
+<dd class=""><a href="orbit.html">Orbit</a></dd>
+<dd class=""><a href="reveal.html">Reveal</a></dd>
+<dd class=""><a href="qa.html">Support</a></dd>
+</dl>        <a class="close-reveal-modal">&#215;</a>
+    </div>
+        <div id="exampleModal" class="reveal-modal">
+    <h2>This is a modal.</h2>
+    <p>Reveal makes these very easy to summon and dismiss. The close button is simple an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
+    <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
+    <p><a href="forms.html#" data-reveal-id="secondModal" class="secondary button">Second Modal&hellip;</a></p>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+  <div id="secondModal" class="reveal-modal">
+    <h2>This is a second modal.</h2>
+    <p>See? It just slides into place after the other first modal. Very handy when you need subsequent dialogs, or when a modal option impacts or requires another decision.</p>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+<script type="text/javascript" src="assets/b29848ec/javascripts/jquery.reveal.js"></script>
+<script type="text/javascript" src="assets/b29848ec/javascripts/jquery.orbit-1.4.0.js"></script>
+<script type="text/javascript" src="assets/b29848ec/javascripts/jquery.customforms.js"></script>
+<script type="text/javascript" src="assets/b29848ec/javascripts/jquery.placeholder.min.js"></script>
+<script type="text/javascript" src="assets/b29848ec/javascripts/modernizr.foundation.js"></script>
+<script type="text/javascript" src="assets/b29848ec/javascripts/jquery.tooltips.js"></script>
+<script type="text/javascript" src="assets/b29848ec/javascripts/app.js"></script>
+<script type="text/javascript" src="js/jquery.offcanvas.js"></script>
+</body>
+</html>

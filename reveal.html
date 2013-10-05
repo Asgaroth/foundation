@@ -31,7 +31,7 @@
 <link rel="stylesheet" type="text/css" href="css/zurb.mega-drop.css" />
 <link rel="stylesheet" type="text/css" href="css/foundation.top-bar.css" />
 <script type="text/javascript" src="assets/444c92ff/jquery.js"></script>
-<title>Yii Foundation 3 : Get Started</title>
+<title>Yii Foundation 3 : Yii Foundation 3 - Reveal Site</title>
     <link rel="icon" type="image/ico" href="favicon.ico">
 
     <!-- Included CSS Files -->
@@ -95,7 +95,7 @@
         <h4 class="subheader">Everything you need to know to build for the future.</h4>
 
       <div class="show-for-small menu-action">
-        <a class='sidebar-button small secondary button' id='sidebarButton' href="index.html#sidebar">
+        <a class='sidebar-button small secondary button' id='sidebarButton' href="reveal.html#sidebar">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
             <line fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" x1="0" y1="8.907" x2="48" y2="8.907"/>
             <line fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" x1="0" y1="24.173" x2="48" y2="24.173"/>
@@ -111,61 +111,39 @@
         <section role="main">
           <div class="row">
             <div class="eight columns">
-                  			<h3>Welcome to Foundation 3.</h3>
-    			<p>Foundation 3 is built on ZURB's 14 years of experience at building sites and apps for the Web. We believe designing responsively &mdash; designing for all devices and any device &mdash; is the future. Foundation is our way of helping you do that. What changed in Foundation 3? Almost everything. Here's what makes Foundation, Foundation.</p>
+              <h3>Reveal &mdash; Simple, Flexible Modal Dialogs</h3>
+                <h4 class="subheader">Modal dialogs, or pop-up windows, are handy for prototyping and production. Foundation includes Reveal our jQuery modal plugin, to make this easy for you.</h4>
 
-    			<div class="row">
-    			  <div class="four columns">
-      			  <h5>Developed with Sass</h5>
-      			  <p>Foundation 3 is built with Sass, a powerful CSS preprocessor, which allows us to much more quickly develop Foundation itself, as well as sites built with it. You can use the Sass or straight CSS version of Foundation.</p>
-    			  </div>
-    			  <div class="four columns">
-      			  <h5>Feature Complete</h5>
-      			  <p>New button elements, new navigation types, new form styles and options, and tons of streamlining make this the fastest way to prototype responsively, and to take that code and go right to production.</p>
-    			  </div>
-    			  <div class="four columns">
-      			  <h5>Freakishly Advanced</h5>
-      			  <p>Foundation is the most advanced front-end Web framework in the world. While the Framework works back all the way to IE8, we're taking advantage of new, awesome Web technology to help you build faster and better.</p>
-    			  </div>
-    			</div>
+                <p><a href="reveal.html#" data-reveal-id="exampleModal" class="radius button">Example Modal&hellip;</a></p>
 
-    			<hr />
+                <hr />
 
-    			<h3>Features of Foundation</h3>
-    			<div class="row">
-      			<div class="six columns">
-        			<h4><a href="grid.html">The Grid</a></h4>
-        			<p>Much of the power of Foundation comes from the grid, a 12-column typographic grid designed to work on almost any sized device screen. With support for nesting, source ordering, offsets and small device presentation it almost makes this too easy.</p>
+                <h4>Using Reveal</h4>
+                <p>Reveal is easy to hook up. Include the JS and CSS in your <code>head</code> (both of which are included in foundation.css and foundation.js, if you use the downloaded code pack). You can either call it in the JS or include a "data-reveal-id" parameter. Here are the steps to get started:</p>
 
-        			<h4><a href="typo.html">Typography</a></h4>
-        			<p>The typography in Foundation is based on a golden ratio modular scale, so all of your typgraphic elements look great together. Through the power of Sass, the typography is also easy to change both in the base size and ratio.</p>
+                  <h5>Markup</h5>
+                    <p><strong>Remember:</strong> your modal should be at the end of the page, after any of your rows or columns.</p>
+                    <script src="https://gist.github.com/2955944.js?file=f3-reveal-example.html"></script>
 
-        			<h4><a href="buttons.html">Buttons</a></h4>
-        			<p>Buttons are one of the core interactive elements of the Web. We've included styles and patterns for buttons that make it simple to create everything from simple marketing CTAs to complex application toolbars.</p>
+                    <h5>Calling Reveal</h5>
+                <p>There are two ways to do call a Reveal modal. The first is to attach a handler to something (button most likely) then call Reveal:</p>
+                    <script src="https://gist.github.com/2955951.js?file=f3-reveal.html"></script>
 
-        		  <h4><a href="forms.html">Forms</a></h4>
-        		  <p>A combination of robust, extensible form styles and the built-in power of the Foundation Grid means you can create simple or complicated forms quickly and easily; validation states, custom select and radio buttons and more are included.</p>
-      			</div>
+                    <p>The new hotness: just add a data-reveal-id to the object which you want to fire the modal when clicked...</p>
+                    <script src="https://gist.github.com/2955957.js?file=f3-reveal-id.html"></script>
 
-      			<div class="six columns">
-        		  <h4><a href="nav.html">Navigation</a></h4>
-        		  <p>People have to get around. Navigation styles in Foundation include simple top bars, sidebars, and subnav pills. We've also included a crazy powerful, responsive top bar that supports N-level dropdowns.</p>
+                    <p>This will launch the modal with the ID "myModal2" without attaching a handler or calling the plugin (since the plugin is always listening for this). You can also pass any of the parameters simply by putting a data-nameOfParameter="value" (i.e. data-animation="fade")</p>
 
-        		  <h4><a href="tabs.html">Tabs</a></h4>
-        		  <p>Whether it's pages or simply tabbed content, Foundation's tabs are not only styled up, but interactive out of the box.</p>
+                <hr />
 
-        		  <h4><a href="ui.html">Elements</a></h4>
-        		  <p>We've also included lots of useful elements like visibility classes (to hide or show things based on screen size or orientation), labels, alerts, tooltips, panels and a lot more.</p>
+                <h4>Options</h4>
+                <script src="https://gist.github.com/2956001.js?file=f3-reveal-options.js"></script>
 
-        		  <h4><a href="orbit.html">Orbit</a></h4>
-        		  <p>Orbit is an image or content slider that's designed to work responsively, and includes lots of useful options like timers, paddles, bullets, thumbs and more. It's easy to use and very flexible.</p>
+                <p>Options can be used on the "data-reveal-id" implementation too, just do it like this:</p>
 
-        		  <h4><a href="reveal.html">Reveal</a></h4>
-        		  <p>If you need modal dialogs Reveal has you covered. You can easily call modals without writing any JS, and modals can now even call subsequent modals cleanly on the same page.</p>
+                <script src="https://gist.github.com/2956006.js?file=f3-reveal-data-options.html"></script>
 
 
-      			</div>
-    			</div>
             </div>
              <div class="four columns">
                 <div class="panel hide-on-phones">
@@ -188,7 +166,7 @@
           </div>
         </section>
         <section id="sidebar" role="complementary">
-            <dl class="tabs nice vertical hide-on-phones"><dd class="active"><a href="index.html">Getting Started</a></dd>
+            <dl class="tabs nice vertical hide-on-phones"><dd class=""><a href="index.html">Getting Started</a></dd>
 <dd class=""><a target="_blank" href="http://www.yiiframework.com/extension/foundation3/">Installing</a></dd>
 <dd class=""><a href="grid.html">Grid</a></dd>
 <dd class=""><a href="typo.html">Typography</a></dd>
@@ -198,7 +176,7 @@
 <dd class=""><a href="tabs.html">Tabs</a></dd>
 <dd class=""><a href="ui.html">Elements</a></dd>
 <dd class=""><a href="orbit.html">Orbit</a></dd>
-<dd class=""><a href="reveal.html">Reveal</a></dd>
+<dd class="active"><a href="reveal.html">Reveal</a></dd>
 <dd class=""><a href="qa.html">Support</a></dd>
 </dl>        </section>
    </div>
@@ -270,7 +248,7 @@
 
     <div id="navModal" class="reveal-modal">
         <h3>Yii Foundation 3 Docs</h3>
-        <dl class="tabs nice vertical"><dd class="active"><a href="index.html">Getting Started</a></dd>
+        <dl class="tabs nice vertical"><dd class=""><a href="index.html">Getting Started</a></dd>
 <dd class=""><a target="_blank" href="http://www.yiiframework.com/extension/foundation3/">Installing</a></dd>
 <dd class=""><a href="grid.html">Grid</a></dd>
 <dd class=""><a href="typo.html">Typography</a></dd>
@@ -280,7 +258,7 @@
 <dd class=""><a href="tabs.html">Tabs</a></dd>
 <dd class=""><a href="ui.html">Elements</a></dd>
 <dd class=""><a href="orbit.html">Orbit</a></dd>
-<dd class=""><a href="reveal.html">Reveal</a></dd>
+<dd class="active"><a href="reveal.html">Reveal</a></dd>
 <dd class=""><a href="qa.html">Support</a></dd>
 </dl>        <a class="close-reveal-modal">&#215;</a>
     </div>
@@ -288,7 +266,7 @@
     <h2>This is a modal.</h2>
     <p>Reveal makes these very easy to summon and dismiss. The close button is simple an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
     <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-    <p><a href="index.html#" data-reveal-id="secondModal" class="secondary button">Second Modal&hellip;</a></p>
+    <p><a href="reveal.html#" data-reveal-id="secondModal" class="secondary button">Second Modal&hellip;</a></p>
     <a class="close-reveal-modal">&#215;</a>
   </div>
 

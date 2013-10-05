@@ -31,7 +31,7 @@
 <link rel="stylesheet" type="text/css" href="css/zurb.mega-drop.css" />
 <link rel="stylesheet" type="text/css" href="css/foundation.top-bar.css" />
 <script type="text/javascript" src="assets/444c92ff/jquery.js"></script>
-<title>Yii Foundation 3 : Get Started</title>
+<title>Yii Foundation 3 : Yii Foundation 3 - Typo Site</title>
     <link rel="icon" type="image/ico" href="favicon.ico">
 
     <!-- Included CSS Files -->
@@ -95,7 +95,7 @@
         <h4 class="subheader">Everything you need to know to build for the future.</h4>
 
       <div class="show-for-small menu-action">
-        <a class='sidebar-button small secondary button' id='sidebarButton' href="index.html#sidebar">
+        <a class='sidebar-button small secondary button' id='sidebarButton' href="typo.html#sidebar">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
             <line fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" x1="0" y1="8.907" x2="48" y2="8.907"/>
             <line fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" x1="0" y1="24.173" x2="48" y2="24.173"/>
@@ -111,61 +111,127 @@
         <section role="main">
           <div class="row">
             <div class="eight columns">
-                  			<h3>Welcome to Foundation 3.</h3>
-    			<p>Foundation 3 is built on ZURB's 14 years of experience at building sites and apps for the Web. We believe designing responsively &mdash; designing for all devices and any device &mdash; is the future. Foundation is our way of helping you do that. What changed in Foundation 3? Almost everything. Here's what makes Foundation, Foundation.</p>
+              <h3>Typography</h3>
+                <h4 class="subheader">Foundation 3 uses a modular scale to generate typography. That means a great, logical vertical rhythm whether you use the SCSS version, or just download the CSS.</h4>
 
-    			<div class="row">
-    			  <div class="four columns">
-      			  <h5>Developed with Sass</h5>
-      			  <p>Foundation 3 is built with Sass, a powerful CSS preprocessor, which allows us to much more quickly develop Foundation itself, as well as sites built with it. You can use the Sass or straight CSS version of Foundation.</p>
-    			  </div>
-    			  <div class="four columns">
-      			  <h5>Feature Complete</h5>
-      			  <p>New button elements, new navigation types, new form styles and options, and tons of streamlining make this the fastest way to prototype responsively, and to take that code and go right to production.</p>
-    			  </div>
-    			  <div class="four columns">
-      			  <h5>Freakishly Advanced</h5>
-      			  <p>Foundation is the most advanced front-end Web framework in the world. While the Framework works back all the way to IE8, we're taking advantage of new, awesome Web technology to help you build faster and better.</p>
-    			  </div>
-    			</div>
+                <h4>How a Modular Scale Works</h4>
+                <p>Based on some stellar work by <a href="http://www.alistapart.com/articles/more-meaningful-typography/">Tim Brown</a>, the idea of a <a href="http://www.zurb.com/article/1000/foundation-30-typography-and-modular-scal">modular scale</a> is that the size and spacing of all of the typography in the framework is derived from an initial value, another arbitrary "important"" value, and a particular ratio. We chose to use the golden ratio, but there are others available.</p>
+                <p>We then use Sass to generate sizes based on those values, in an ascending scale of size and spacing. If you use the SCSS version of Foundation you can easily change these values, otherwise we default to a 14px base with a 44px important value (based on common UI element size).</p>
 
-    			<hr />
+                <script src="https://gist.github.com/2952520.js?file=f3-modscale.scss"></script>
 
-    			<h3>Features of Foundation</h3>
-    			<div class="row">
-      			<div class="six columns">
-        			<h4><a href="grid.html">The Grid</a></h4>
-        			<p>Much of the power of Foundation comes from the grid, a 12-column typographic grid designed to work on almost any sized device screen. With support for nesting, source ordering, offsets and small device presentation it almost makes this too easy.</p>
+                <hr />
 
-        			<h4><a href="typo.html">Typography</a></h4>
-        			<p>The typography in Foundation is based on a golden ratio modular scale, so all of your typgraphic elements look great together. Through the power of Sass, the typography is also easy to change both in the base size and ratio.</p>
+                <h4>General Typography</h4>
+                <p>These are the basic elements of typography and rhythm in Foundation 3.</p>
 
-        			<h4><a href="buttons.html">Buttons</a></h4>
-        			<p>Buttons are one of the core interactive elements of the Web. We've included styles and patterns for buttons that make it simple to create everything from simple marketing CTAs to complex application toolbars.</p>
+                <div class="typography">
 
-        		  <h4><a href="forms.html">Forms</a></h4>
-        		  <p>A combination of robust, extensible form styles and the built-in power of the Foundation Grid means you can create simple or complicated forms quickly and easily; validation states, custom select and radio buttons and more are included.</p>
-      			</div>
+                  <h1>h1. This is a very large header.</h1>
+                  <h2>h2. This is a large header.</h2>
+                  <h3>h3. This is a medium header.</h3>
+                  <h4>h4. This is a moderate header.</h4>
+                  <h5>h5. This is small header.</h5>
+                  <h6>h6. This is very small header.</h6>
 
-      			<div class="six columns">
-        		  <h4><a href="nav.html">Navigation</a></h4>
-        		  <p>People have to get around. Navigation styles in Foundation include simple top bars, sidebars, and subnav pills. We've also included a crazy powerful, responsive top bar that supports N-level dropdowns.</p>
+                  <p>This is a paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content so, let's see...did you know that there are storms occurring on Jupiter that are larger than the Earth? That's pretty cool.</p>
 
-        		  <h4><a href="tabs.html">Tabs</a></h4>
-        		  <p>Whether it's pages or simply tabbed content, Foundation's tabs are not only styled up, but interactive out of the box.</p>
+                </div>
 
-        		  <h4><a href="ui.html">Elements</a></h4>
-        		  <p>We've also included lots of useful elements like visibility classes (to hide or show things based on screen size or orientation), labels, alerts, tooltips, panels and a lot more.</p>
+                <hr />
 
-        		  <h4><a href="orbit.html">Orbit</a></h4>
-        		  <p>Orbit is an image or content slider that's designed to work responsively, and includes lots of useful options like timers, paddles, bullets, thumbs and more. It's easy to use and very flexible.</p>
+                <h4>Header Styles</h4>
+                <p>Foundation 3 includes a number of different styles and treatments for typographic elements, such as subheaders or small header segments.</p>
 
-        		  <h4><a href="reveal.html">Reveal</a></h4>
-        		  <p>If you need modal dialogs Reveal has you covered. You can easily call modals without writing any JS, and modals can now even call subsequent modals cleanly on the same page.</p>
+                <div class="typography">
 
+            <h2>This is a very large main header.</h2>
+            <h4 class="subheader">This is a smaller subheader.</h4>
 
-      			</div>
-    			</div>
+            <script src="https://gist.github.com/2952496.js?file=f3-subheaders.html"></script>
+
+            <h3>This is a large header. <small>This is a small segment of that header.</small></h3>
+            <script src="https://gist.github.com/2952501.js?file=f3-header-segment.html"></script>
+
+                </div>
+
+                <hr />
+
+                <h4>Links</h4>
+                <p>Where would we be without links? Not in hypertext, that's for sure! Ah, nerd humor. Anyways. Links are very standard, and the color is preset or controlled via the _base.scss file as the main color.</p>
+
+                <div class="typography">
+                  <h2><a href="typo.html#">This is a header link.</a></h2>
+                  <h3><a href="typo.html#">This is a header link.</a></h3>
+                  <h4><a href="typo.html#">This is a header link.</a></h4>
+                  <h5><a href="typo.html#">This is a header link.</a></h5>
+                  <p><a href="typo.html#">This is a standard inline paragraph link.</a></p>
+                </div>
+
+                <hr />
+
+                <h4>Lists</h4>
+                <p>Lists are helpful for, well, lists of things. Foundation 3 uses <a href="http://necolas.github.com/normalize.css/">Normalize.css</a> so lists won't be reset as they were in previous versions. However, we still provide a few simple affordances for lists.</p>
+
+                <div class="row">
+
+                  <div class="four columns">
+                    <h5>ul.disc</h5>
+                    <ul class="disc">
+                      <li>List item with a much longer description or more content.</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                    </ul>
+                  </div>
+                  <div class="four columns">
+                    <h5>ul.circle</h5>
+                    <ul class="circle">
+                      <li>List item with a much longer description or more content.</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                    </ul>
+                  </div>
+                  <div class="four columns">
+                    <h5>ul.square</h5>
+                    <ul class="square">
+                      <li>List item with a much longer description or more content.</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <hr />
+
+                <h4>Blockquotes</h4>
+                <p>Sometimes other people say smart things, and you may want to mention that through a blockquote callout. We've got you covered.</p>
+
+                <blockquote>I do not fear computers. I fear the lack of them. <cite>Isaac Asimov</cite></blockquote>
+
+                <script src="https://gist.github.com/2952560.js?file=f3-blockquote.html"></script>
+
+                <hr />
+
+                <h4>Print Styles</h4>
+                <p>Foundation includes print styles developed by HTML5 Boilerplate to give you some basic print-specific styles. These are activated when you print through a media query. It includes:</p>
+
+                <ul class="disc">
+                  <li>Clearing out backgrounds, box shadows, and text shadows</li>
+                  <li>Appending link URLs after the anchor text</li>
+                  <li>Bordering blockquotes and pre elements</li>
+                  <li>Page cleanup and widow minimization</li>
+                </ul>
+
+                <p>On top of that, Foundation includes a couple of simple classes you can use to control elements printing, or not printing. Simply attached <code>.print-only</code> on an element to only show when printing, and <code>.hide-on-print</code> to hide something when printing.</p>
             </div>
              <div class="four columns">
                 <div class="panel hide-on-phones">
@@ -188,10 +254,10 @@
           </div>
         </section>
         <section id="sidebar" role="complementary">
-            <dl class="tabs nice vertical hide-on-phones"><dd class="active"><a href="index.html">Getting Started</a></dd>
+            <dl class="tabs nice vertical hide-on-phones"><dd class=""><a href="index.html">Getting Started</a></dd>
 <dd class=""><a target="_blank" href="http://www.yiiframework.com/extension/foundation3/">Installing</a></dd>
 <dd class=""><a href="grid.html">Grid</a></dd>
-<dd class=""><a href="typo.html">Typography</a></dd>
+<dd class="active"><a href="typo.html">Typography</a></dd>
 <dd class=""><a href="buttons.html">Buttons</a></dd>
 <dd class=""><a href="forms.html">Forms</a></dd>
 <dd class=""><a href="nav.html">Navigation</a></dd>
@@ -270,10 +336,10 @@
 
     <div id="navModal" class="reveal-modal">
         <h3>Yii Foundation 3 Docs</h3>
-        <dl class="tabs nice vertical"><dd class="active"><a href="index.html">Getting Started</a></dd>
+        <dl class="tabs nice vertical"><dd class=""><a href="index.html">Getting Started</a></dd>
 <dd class=""><a target="_blank" href="http://www.yiiframework.com/extension/foundation3/">Installing</a></dd>
 <dd class=""><a href="grid.html">Grid</a></dd>
-<dd class=""><a href="typo.html">Typography</a></dd>
+<dd class="active"><a href="typo.html">Typography</a></dd>
 <dd class=""><a href="buttons.html">Buttons</a></dd>
 <dd class=""><a href="forms.html">Forms</a></dd>
 <dd class=""><a href="nav.html">Navigation</a></dd>
@@ -288,7 +354,7 @@
     <h2>This is a modal.</h2>
     <p>Reveal makes these very easy to summon and dismiss. The close button is simple an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
     <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-    <p><a href="index.html#" data-reveal-id="secondModal" class="secondary button">Second Modal&hellip;</a></p>
+    <p><a href="typo.html#" data-reveal-id="secondModal" class="secondary button">Second Modal&hellip;</a></p>
     <a class="close-reveal-modal">&#215;</a>
   </div>
 
