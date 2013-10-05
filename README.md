@@ -5,27 +5,29 @@ Foundation is an easy to use, powerful, and flexible framework for building prot
 [A Word about foundation](http://www.alistapart.com/articles/dive-into-responsive-prototyping-with-foundation/ "A List Apart")
 
 ## Demo
-[Yii Foundation](http://foundation3.oakwebdev.com/?utm_source=update&utm_medium=ext-page&utm_campaign=v0.1.0 "Yii Foundation")
+[Yii Foundation](http://foundation3.oakwebdev.com/?utm_source=github&utm_medium=readme&utm_campaign=v0.1.0 "Yii Foundation")
 
 ## Setup instructions
 
 1. Download the files and extract them to you project's desired folder
 2. Add the following code to your application configuration:
-~~~
-[php]
-...
-'preload'=>array(
-    .....
-    'foundation', // preload the foundation component
-),
-'components'=>array(
-    .....
-     // assuming you extracted foundation under extensions
-    'foundation' => array("class" => "ext.foundation.components.Foundation"),
-    
-),
-...
-~~~
+
+    ~~~
+    [php]
+    ...
+    'preload'=>array(
+        .....
+        'foundation', // preload the foundation component
+    ),
+    'components'=>array(
+        .....
+         // assuming you extracted foundation under extensions
+        'foundation' => array("class" => "ext.foundation.components.Foundation"),
+        
+    ),
+    ...
+    ~~~
+
 3. Start using it, check the documentation on using [forms](http://foundation3.oakwebdev.com/index.php?r=site/forms "forms"), and [UI Components](http://foundation3.oakwebdev.com/index.php?r=site/ui "UI Elements")
 
 > Info: This is a work in progress, not all components of foundation are to be found in the Yii extension yet. but you can still use them as you normally would use Foundation.
