@@ -5,7 +5,7 @@ Foundation is an easy to use, powerful, and flexible framework for building prot
 [A Word about foundation](http://www.alistapart.com/articles/dive-into-responsive-prototyping-with-foundation/ "A List Apart")
 
 ## Demo
-[Yii Foundation](http://foundation3.oakwebdev.com/?utm_source=github&utm_medium=readme&utm_campaign=v0.1.0 "Yii Foundation")
+[Yii Foundation](http://asgaroth.github.io/foundation/?utm_source=github&utm_medium=readme&utm_campaign=v0.1.0 "Yii Foundation")
 
 ## Setup instructions
 
